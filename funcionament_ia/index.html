@@ -1203,18 +1203,7 @@
 <h2 id="2-com-funciona-una-ia-generativa">2. Com funciona una IA generativa?</h2>
 <p>Una IA generativa de text funciona, simplificant molt, com un sistema que ha aprés relacions entre paraules, idees i estructures. Quan li fem una pregunta o li donem una instrucció, calcula quina resposta és més probable i coherent segons el context.</p>
 <p>No consulta necessàriament Internet, no comprova sempre els fets i no té criteri professional propi. Per això és fonamental que el professorat supervise, adapte i valide el resultat.</p>
-<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
-<span class="normal"><a href="#__codelineno-0-2">2</a></span>
-<span class="normal"><a href="#__codelineno-0-3">3</a></span>
-<span class="normal"><a href="#__codelineno-0-4">4</a></span>
-<span class="normal"><a href="#__codelineno-0-5">5</a></span>
-<span class="normal"><a href="#__codelineno-0-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a>flowchart LR
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a>    A[Instruccio del docent] --&gt; B[Model d&#39;IA]
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a>    B --&gt; C[Analisi del context]
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a>    C --&gt; D[Generacio de resposta]
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a>    D --&gt; E[Revisio del docent]
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a>    E --&gt; F[Material adaptat a l&#39;aula]
-</span></code></pre></div></td></tr></table></div>
+<p><img alt="Cicle ús IA en l'àmbid docent" src="../img/cicle_ia_docent.png" /></p>
 <div class="admonition warning">
 <p class="admonition-title">Atenció</p>
 <p>La IA pot inventar dades, normatives, cites o exemples. Aquest fenomen s'anomena sovint <strong>al·lucinació</strong>. En continguts legals, fiscals, comptables o laborals cal verificar sempre la informació amb fonts oficials o materials actualitzats.</p>
@@ -1231,16 +1220,16 @@
 <li><strong>Criteris</strong>: durada, dificultat, competències, llengua, to o limitacions.</li>
 </ul>
 <h3 id="exemple-de-prompt-basic">Exemple de prompt bàsic</h3>
-<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a>Explica què és el marxandatge.
+<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a>Explica què és el marxandatge.
 </span></code></pre></div></td></tr></table></div>
 <h3 id="exemple-de-prompt-millorat">Exemple de prompt millorat</h3>
-<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
-<span class="normal"><a href="#__codelineno-2-2">2</a></span>
-<span class="normal"><a href="#__codelineno-2-3">3</a></span>
-<span class="normal"><a href="#__codelineno-2-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a>Actua com a professor de FP de Grau Mitjà d&#39;Activitats Comercials.
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a>Prepara una explicació clara sobre el marxandatge per a alumnat de primer curs.
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a>Inclou: definició, objectius, exemple senzill en una botiga i tres preguntes de comprovació.
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a>Usa valencià i un llenguatge accessible.
+<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span>
+<span class="normal"><a href="#__codelineno-1-3">3</a></span>
+<span class="normal"><a href="#__codelineno-1-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a>Actua com a professor de FP de Grau Mitjà d&#39;Activitats Comercials.
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a>Prepara una explicació clara sobre el marxandatge per a alumnat de primer curs.
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a>Inclou: definició, objectius, exemple senzill en una botiga i tres preguntes de comprovació.
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a>Usa valencià i un llenguatge accessible.
 </span></code></pre></div></td></tr></table></div>
 <div class="admonition tip">
 <p class="admonition-title">Truc docent</p>
@@ -1259,13 +1248,13 @@
 </ul>
 <div class="admonition example">
 <p class="admonition-title">Prompt per a preparar una sessió</p>
-<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
-<span class="normal"><a href="#__codelineno-3-2">2</a></span>
-<span class="normal"><a href="#__codelineno-3-3">3</a></span>
-<span class="normal"><a href="#__codelineno-3-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a>Actua com a docent de FP del mòdul Dinamització del Punt de Venda.
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a>Dissenya una sessió de 55 minuts sobre la col·locació de productes en un lineal.
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a>Inclou objectius, seqüència d&#39;activitats, materials necessaris,
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4"></a>preguntes per activar coneixements previs i una activitat final d&#39;avaluació ràpida.
+<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<span class="normal"><a href="#__codelineno-2-2">2</a></span>
+<span class="normal"><a href="#__codelineno-2-3">3</a></span>
+<span class="normal"><a href="#__codelineno-2-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a>Actua com a docent de FP del mòdul Dinamització del Punt de Venda.
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a>Dissenya una sessió de 55 minuts sobre la col·locació de productes en un lineal.
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a>Inclou objectius, seqüència d&#39;activitats, materials necessaris,
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a>preguntes per activar coneixements previs i una activitat final d&#39;avaluació ràpida.
 </span></code></pre></div></td></tr></table></div>
 </div>
 <h3 id="42-creacio-de-casos-practics">4.2 Creació de casos pràctics</h3>
@@ -1306,13 +1295,13 @@
 </table>
 <div class="admonition example">
 <p class="admonition-title">Prompt per a un cas pràctic</p>
-<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
-<span class="normal"><a href="#__codelineno-4-2">2</a></span>
-<span class="normal"><a href="#__codelineno-4-3">3</a></span>
-<span class="normal"><a href="#__codelineno-4-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a>Crea un cas pràctic per a alumnat de Grau Mitjà d&#39;Activitats Comercials
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a>sobre una campanya promocional per a una botiga de productes esportius.
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3"></a>Inclou el perfil del client, objectiu de la campanya, productes destacats,
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4"></a>accions en el punt de venda, accions en xarxes socials i criteris d&#39;avaluació.
+<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
+<span class="normal"><a href="#__codelineno-3-2">2</a></span>
+<span class="normal"><a href="#__codelineno-3-3">3</a></span>
+<span class="normal"><a href="#__codelineno-3-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a>Crea un cas pràctic per a alumnat de Grau Mitjà d&#39;Activitats Comercials
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a>sobre una campanya promocional per a una botiga de productes esportius.
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a>Inclou el perfil del client, objectiu de la campanya, productes destacats,
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4"></a>accions en el punt de venda, accions en xarxes socials i criteris d&#39;avaluació.
 </span></code></pre></div></td></tr></table></div>
 </div>
 <h3 id="43-adaptacio-a-diferents-ritmes-daprenentatge">4.3 Adaptació a diferents ritmes d'aprenentatge</h3>
@@ -1326,13 +1315,13 @@
 </ul>
 <div class="admonition example">
 <p class="admonition-title">Prompt per a atenció a la diversitat</p>
-<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
-<span class="normal"><a href="#__codelineno-5-2">2</a></span>
-<span class="normal"><a href="#__codelineno-5-3">3</a></span>
-<span class="normal"><a href="#__codelineno-5-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a>Adapta aquesta activitat sobre atenció d&#39;una reclamació de client a tres nivells:
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2"></a>nivell inicial, nivell mitjà i nivell avançat.
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3"></a>Mantín el mateix objectiu d&#39;aprenentatge, però varia el grau d&#39;ajuda,
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4"></a>la quantitat d&#39;informació del cas i la complexitat de la resposta comercial.
+<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
+<span class="normal"><a href="#__codelineno-4-2">2</a></span>
+<span class="normal"><a href="#__codelineno-4-3">3</a></span>
+<span class="normal"><a href="#__codelineno-4-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a>Adapta aquesta activitat sobre atenció d&#39;una reclamació de client a tres nivells:
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a>nivell inicial, nivell mitjà i nivell avançat.
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3"></a>Mantín el mateix objectiu d&#39;aprenentatge, però varia el grau d&#39;ajuda,
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4"></a>la quantitat d&#39;informació del cas i la complexitat de la resposta comercial.
 </span></code></pre></div></td></tr></table></div>
 </div>
 <h3 id="44-avaluacio-i-retroaccio">4.4 Avaluació i retroacció</h3>
@@ -1347,15 +1336,15 @@
 </ul>
 <div class="admonition example">
 <p class="admonition-title">Prompt per a una rúbrica</p>
-<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
-<span class="normal"><a href="#__codelineno-6-2">2</a></span>
-<span class="normal"><a href="#__codelineno-6-3">3</a></span>
-<span class="normal"><a href="#__codelineno-6-4">4</a></span>
-<span class="normal"><a href="#__codelineno-6-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a>Crea una rúbrica per a avaluar una activitat de simulació d&#39;atenció al client
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2"></a>en un cicle de FP de Comerç i Màrqueting.
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3"></a>Avalua: comunicació oral, escolta activa, resolució de la incidència,
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4"></a>ús de llenguatge professional, orientació al client i proposta de solució.
-</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5"></a>Usa quatre nivells d&#39;assoliment i descriptors observables.
+<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
+<span class="normal"><a href="#__codelineno-5-2">2</a></span>
+<span class="normal"><a href="#__codelineno-5-3">3</a></span>
+<span class="normal"><a href="#__codelineno-5-4">4</a></span>
+<span class="normal"><a href="#__codelineno-5-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a>Crea una rúbrica per a avaluar una activitat de simulació d&#39;atenció al client
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2"></a>en un cicle de FP de Comerç i Màrqueting.
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3"></a>Avalua: comunicació oral, escolta activa, resolució de la incidència,
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4"></a>ús de llenguatge professional, orientació al client i proposta de solució.
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5"></a>Usa quatre nivells d&#39;assoliment i descriptors observables.
 </span></code></pre></div></td></tr></table></div>
 </div>
 <h2 id="5-usos-concrets-en-la-tasca-docent">5. Usos concrets en la tasca docent</h2>
@@ -1444,41 +1433,41 @@
 <h3 id="objectiu">Objectiu</h3>
 <p>Crear una activitat professionalitzadora sobre una situació de venda, assessorament i resolució d'una incidència amb un client.</p>
 <h3 id="prompt">Prompt</h3>
-<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-7-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-7-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-7-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-7-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-7-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-7-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-7-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-7-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-7-10">10</a></span>
-<span class="normal"><a href="#__codelineno-7-11">11</a></span>
-<span class="normal"><a href="#__codelineno-7-12">12</a></span>
-<span class="normal"><a href="#__codelineno-7-13">13</a></span>
-<span class="normal"><a href="#__codelineno-7-14">14</a></span>
-<span class="normal"><a href="#__codelineno-7-15">15</a></span>
-<span class="normal"><a href="#__codelineno-7-16">16</a></span>
-<span class="normal"><a href="#__codelineno-7-17">17</a></span>
-<span class="normal"><a href="#__codelineno-7-18">18</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a>Actua com a professor de FP de Grau Mitjà d&#39;Activitats Comercials.
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2"></a>Vull una activitat pràctica sobre venda consultiva i atenció al client.
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3"></a>L&#39;alumnat ha de treballar el diagnòstic de necessitats, l&#39;argumentari de venda,
-</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4"></a>la gestió d&#39;una objecció i el registre final de la incidència.
-</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5"></a>
-</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6"></a>Context:
-</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7"></a>- Grup de primer curs.
-</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8"></a>- Durada: 90 minuts.
-</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9"></a>- Treball en parelles.
-</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10"></a>- Nivell inicial-mitjà.
-</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11"></a>
-</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12"></a>Inclou:
-</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13"></a>1. Situació professional realista.
-</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14"></a>2. Perfil del client i necessitats detectades.
-</span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15"></a>3. Productes o serveis disponibles i condicions comercials.
-</span><span id="__span-7-16"><a id="__codelineno-7-16" name="__codelineno-7-16"></a>4. Criteris d&#39;avaluació.
-</span><span id="__span-7-17"><a id="__codelineno-7-17" name="__codelineno-7-17"></a>5. Solució orientativa.
-</span><span id="__span-7-18"><a id="__codelineno-7-18" name="__codelineno-7-18"></a>6. Possibles errors habituals.
+<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-6-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-6-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-6-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-6-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-6-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-6-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-6-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-6-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-6-10">10</a></span>
+<span class="normal"><a href="#__codelineno-6-11">11</a></span>
+<span class="normal"><a href="#__codelineno-6-12">12</a></span>
+<span class="normal"><a href="#__codelineno-6-13">13</a></span>
+<span class="normal"><a href="#__codelineno-6-14">14</a></span>
+<span class="normal"><a href="#__codelineno-6-15">15</a></span>
+<span class="normal"><a href="#__codelineno-6-16">16</a></span>
+<span class="normal"><a href="#__codelineno-6-17">17</a></span>
+<span class="normal"><a href="#__codelineno-6-18">18</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a>Actua com a professor de FP de Grau Mitjà d&#39;Activitats Comercials.
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2"></a>Vull una activitat pràctica sobre venda consultiva i atenció al client.
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3"></a>L&#39;alumnat ha de treballar el diagnòstic de necessitats, l&#39;argumentari de venda,
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4"></a>la gestió d&#39;una objecció i el registre final de la incidència.
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5"></a>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6"></a>Context:
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7"></a>- Grup de primer curs.
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8"></a>- Durada: 90 minuts.
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9"></a>- Treball en parelles.
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10"></a>- Nivell inicial-mitjà.
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11"></a>
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12"></a>Inclou:
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13"></a>1. Situació professional realista.
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14"></a>2. Perfil del client i necessitats detectades.
+</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15"></a>3. Productes o serveis disponibles i condicions comercials.
+</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16"></a>4. Criteris d&#39;avaluació.
+</span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17"></a>5. Solució orientativa.
+</span><span id="__span-6-18"><a id="__codelineno-6-18" name="__codelineno-6-18"></a>6. Possibles errors habituals.
 </span></code></pre></div></td></tr></table></div>
 <h3 id="resultat-esperat">Resultat esperat</h3>
 <p>La IA pot retornar una proposta que el docent revisarà i adaptarà. El valor no està en copiar-la directament, sinó en usar-la com a primer esborrany per a:</p>
@@ -1574,44 +1563,44 @@
 </div>
 <h2 id="9-banc-de-prompts-per-al-professorat">9. Banc de prompts per al professorat</h2>
 <h3 id="generar-explicacions">Generar explicacions</h3>
-<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
-<span class="normal"><a href="#__codelineno-8-2">2</a></span>
-<span class="normal"><a href="#__codelineno-8-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1"></a>Explica [concepte] per a alumnat de [cicle i curs].
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2"></a>Usa un exemple relacionat amb una empresa xicoteta.
-</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3"></a>Inclou una analogia, un exemple resolt i tres preguntes finals.
+<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
+<span class="normal"><a href="#__codelineno-7-2">2</a></span>
+<span class="normal"><a href="#__codelineno-7-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a>Explica [concepte] per a alumnat de [cicle i curs].
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2"></a>Usa un exemple relacionat amb una empresa xicoteta.
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3"></a>Inclou una analogia, un exemple resolt i tres preguntes finals.
 </span></code></pre></div></td></tr></table></div>
 <h3 id="crear-activitats">Crear activitats</h3>
-<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span>
-<span class="normal"><a href="#__codelineno-9-2">2</a></span>
-<span class="normal"><a href="#__codelineno-9-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1"></a>Dissenya una activitat pràctica sobre [contingut] per al mòdul [nom del mòdul].
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2"></a>Ha de durar [temps], fer-se en [individual/parelles/grups] i acabar amb un producte avaluable.
-</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3"></a>Inclou enunciat, materials, passos i criteris d&#39;avaluació.
+<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
+<span class="normal"><a href="#__codelineno-8-2">2</a></span>
+<span class="normal"><a href="#__codelineno-8-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1"></a>Dissenya una activitat pràctica sobre [contingut] per al mòdul [nom del mòdul].
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2"></a>Ha de durar [temps], fer-se en [individual/parelles/grups] i acabar amb un producte avaluable.
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3"></a>Inclou enunciat, materials, passos i criteris d&#39;avaluació.
 </span></code></pre></div></td></tr></table></div>
 <h3 id="crear-una-rubrica">Crear una rúbrica</h3>
-<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span>
-<span class="normal"><a href="#__codelineno-10-2">2</a></span>
-<span class="normal"><a href="#__codelineno-10-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1"></a>Crea una rúbrica per a avaluar [tasca].
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2"></a>Usa quatre nivells: excel·lent, adequat, bàsic i insuficient.
-</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3"></a>Els criteris han de ser observables i adequats a FP.
+<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span>
+<span class="normal"><a href="#__codelineno-9-2">2</a></span>
+<span class="normal"><a href="#__codelineno-9-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1"></a>Crea una rúbrica per a avaluar [tasca].
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2"></a>Usa quatre nivells: excel·lent, adequat, bàsic i insuficient.
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3"></a>Els criteris han de ser observables i adequats a FP.
 </span></code></pre></div></td></tr></table></div>
 <h3 id="adaptar-material">Adaptar material</h3>
-<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span>
-<span class="normal"><a href="#__codelineno-11-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1"></a>Adapta aquest text per a alumnat amb dificultats de comprensió lectora.
-</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2"></a>Mantín les idees principals, usa frases més curtes i afegeix un glossari de termes.
+<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span>
+<span class="normal"><a href="#__codelineno-10-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1"></a>Adapta aquest text per a alumnat amb dificultats de comprensió lectora.
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2"></a>Mantín les idees principals, usa frases més curtes i afegeix un glossari de termes.
 </span></code></pre></div></td></tr></table></div>
 <h3 id="crear-preguntes-de-repas">Crear preguntes de repàs</h3>
-<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span>
-<span class="normal"><a href="#__codelineno-12-2">2</a></span>
-<span class="normal"><a href="#__codelineno-12-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1"></a>Crea 10 preguntes de repàs sobre [tema].
-</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2"></a>Inclou 4 tipus test, 3 de resposta curta i 3 situacions pràctiques.
-</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3"></a>Marca la resposta correcta i explica breument el perquè.
+<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span>
+<span class="normal"><a href="#__codelineno-11-2">2</a></span>
+<span class="normal"><a href="#__codelineno-11-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1"></a>Crea 10 preguntes de repàs sobre [tema].
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2"></a>Inclou 4 tipus test, 3 de resposta curta i 3 situacions pràctiques.
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3"></a>Marca la resposta correcta i explica breument el perquè.
 </span></code></pre></div></td></tr></table></div>
 <h3 id="simular-un-rol-professional">Simular un rol professional</h3>
-<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span>
-<span class="normal"><a href="#__codelineno-13-2">2</a></span>
-<span class="normal"><a href="#__codelineno-13-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1"></a>Actua com a client que presenta una reclamació per un producte defectuós.
-</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2"></a>Jo seré la persona venedora que t&#39;ha d&#39;atendre.
-</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3"></a>Respon de manera realista i espera la meua intervenció abans de continuar.
+<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span>
+<span class="normal"><a href="#__codelineno-12-2">2</a></span>
+<span class="normal"><a href="#__codelineno-12-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1"></a>Actua com a client que presenta una reclamació per un producte defectuós.
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2"></a>Jo seré la persona venedora que t&#39;ha d&#39;atendre.
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3"></a>Respon de manera realista i espera la meua intervenció abans de continuar.
 </span></code></pre></div></td></tr></table></div>
 <h2 id="10-recomanacions-finals">10. Recomanacions finals</h2>
 <ul>
