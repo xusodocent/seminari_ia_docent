@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestió Administrativa del Comerç Internacional - GVA Educació (AULES)</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .gva-orange { color: #f37021; }
+        .gva-bg-orange { background-color: #f37021; }
+        .gva-blue { color: #005691; }
+        .gva-bg-blue { background-color: #005691; }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans min-h-screen flex flex-col">
+
+    <!-- CABECERA INSTITUCIONAL (Estilo Generalitat Valenciana) -->
+    <header class="gva-bg-blue text-white shadow-md border-b-4 border-amber-500">
+        <div class="container mx-auto px-4 py-6 flex flex-col md:flex-row justify-between items-center">
+            <div class="flex items-center space-x-4 mb-4 md:mb-0">
+                <div class="bg-white p-2 rounded-lg shadow-inner">
+                    <span class="font-bold text-2xl tracking-wider text-amber-500">GVA</span>
+                </div>
+                <div>
+                    <h1 class="text-xl md:text-2xl font-bold tracking-tight">Gestió Administrativa del Comerç Internacional</h1>
+                    <p class="text-xs md:text-sm text-slate-200 uppercase tracking-widest font-semibold">Mòdul Professional (Codi 0627) • Grau Superior • Curs 2025-2026</p>
+                    <p class="text-xs text-amber-300 font-medium">Adaptat a la Nova FP • Comunitat Valenciana</p>
+                </div>
+            </div>
+            <div class="text-right text-xs md:text-sm">
+                <p class="font-bold"><i class="fa-solid fa-graduation-cap mr-1"></i> CFGS Comerç Internacional</p>
+                <p class="opacity-80">I.E.S. Públic de la Comunitat Valenciana</p>
+                <span class="inline-block mt-1 bg-amber-500 text-slate-950 font-bold px-2.5 py-0.5 rounded-full text-xs">Modalitat Presencial</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- MENÚ PRINCIPAL INTERACTIVO -->
+    <nav class="bg-slate-800 text-white sticky top-0 z-50 shadow-md">
+        <div class="container mx-auto px-4 overflow-x-auto">
+            <div class="flex space-x-1 py-2 min-w-max">
+                <button onclick="switchTab('guia')" id="tab-btn-guia" class="tab-btn active px-4 py-2 rounded-lg text-sm font-semibold hover:bg-slate-700 transition flex items-center gap-2 bg-amber-500 text-slate-950">
+                    <i class="fa-solid fa-book-open"></i> Guia del Mòdul & LOMLOE
+                </button>
+                <button onclick="switchTab('continguts')" id="tab-btn-continguts" class="tab-btn px-4 py-2 rounded-lg text-sm font-semibold hover:bg-slate-700 transition flex items-center gap-2">
+                    <i class="fa-solid fa-folder-open"></i> Unitats i Apunts
+                </button>
+                <button onclick="switchTab('calculadora')" id="tab-btn-calculadora" class="tab-btn px-4 py-2 rounded-lg text-sm font-semibold hover:bg-slate-700 transition flex items-center gap-2">
+                    <i class="fa-solid fa-calculator"></i> Simulador d'Aranzels i IVA
+                </button>
+                <button onclick="switchTab('activitats')" id="tab-btn-activitats" class="tab-btn px-4 py-2 rounded-lg text-sm font-semibold hover:bg-slate-700 transition flex items-center gap-2">
+                    <i class="fa-solid fa-pencil"></i> Casos Pràctics i REA
+                </button>
+                <button onclick="switchTab('autoavaluacio')" id="tab-btn-autoavaluacio" class="tab-btn px-4 py-2 rounded-lg text-sm font-semibold hover:bg-slate-700 transition flex items-center gap-2">
+                    <i class="fa-solid fa-clipboard-question"></i> Autoavaluació Interactiva
+                </button>
+                <button onclick="switchTab('rubriques')" id="tab-btn-rubriques" class="tab-btn px-4 py-2 rounded-lg text-sm font-semibold hover:bg-slate-700 transition flex items-center gap-2">
+                    <i class="fa-solid fa-star"></i> Rúbriques i Exàmens
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="flex-grow container mx-auto px-4 py-8">
+
+        <!-- ================= SECCIÓN 1: GUIA DOCENTE & NORMATIVA ================= -->
+        <section id="tab-guia" class="tab-content active space-y-6">
+            <div class="bg-white rounded-xl p-6 shadow-sm border border-slate-200">
+                <h2 class="text-2xl font-bold text-slate-900 border-b pb-3 mb-4 flex items-center gap-3">
+                    <i class="fa-solid fa-circle-info gva-blue"></i>
+                    Presentació i Programació del Mòdul (Nova FP)
+                </h2>
+                <p class="text-slate-600 leading-relaxed mb-4">
+                    Benvinguts al mòdul professional de <strong>Gestió Administrativa del Comerç Internacional (Codi 0627)</strong>. 
+                    Aquest espai digital està dissenyat segons les especificacions de la Llei Orgànica 3/2022 de la Nova FP, 
+                    per al seu ús a l'aula presencial i com a material d'autoestudi a la plataforma AULES. Està adaptat a l'entorn de la 
+                    <strong>Comunitat Valenciana</strong>, integrant conceptes de digitalització duanera, finestreta única de comerç exterior i 
+                    compromesos amb els Objectius de Desenvolupament Sostenible (ODS).
+                </p>
+
+                <!-- Tarjetas de Información Rápida -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-6">
+                    <div class="bg-blue-50 border-l-4 border-blue-600 p-4 rounded-r-lg">
+                        <h3 class="font-bold text-blue-950 text-sm uppercase">Hores Totals</h3>
+                        <p class="text-2xl font-extrabold text-blue-900">140 hores</p>
+                        <p class="text-xs text-blue-700 mt-1">Distribuïdes en 4 hores/setmana</p>
+                    </div>
+                    <div class="bg-amber-50 border-l-4 border-amber-500 p-4 rounded-r-lg">
+                        <h3 class="font-bold text-amber-950 text-sm uppercase">Metodologia Activa</h3>
+                        <p class="text-lg font-bold text-amber-900">Aprenentatge Basat en Projectes (ABP)</p>
+                        <p class="text-xs text-amber-700 mt-1">Simulació de despatxos duaners i operativa real</p>
+                    </div>
+                    <div class="bg-emerald-50 border-l-4 border-emerald-600 p-4 rounded-r-lg">
+                        <h3 class="font-bold text-emerald-950 text-sm uppercase">Requisit Clau</h3>
+                        <p class="text-lg font-bold text-emerald-900">Digitalització i Pràctica</p>
+                        <p class="text-xs text-emerald-700 mt-1">Ús de la finestreta única duanera de l'AEAT</p>
+                    </div>
+                </div>
+
+                <!-- Resultados de Aprendizaje (RA) -->
+                <h3 class="text-lg font-bold text-slate-900 mt-6 mb-3"><i class="fa-solid fa-list-check mr-2"></i> Resultats d'Aprenentatge (RA) - Currículum Oficial</h3>
+                <div class="space-y-3">
+                    <div class="p-3 bg-slate-50 rounded-lg border border-slate-200">
+                        <p class="font-bold text-slate-800 text-sm">RA1. Organitza un sistema d'informació eficaç per a les operacions de la gestió administrativa de la compravenda internacional, utilitzant les eines informàtiques adequades.</p>
+                        <span class="text-xs text-slate-500">Criteris d'aval.: Identificació d'organismes, anàlisi de canals de distribució d'informació, ús de bases de dades internacionals (Taric).</span>
+                    </div>
+                    <div class="p-3 bg-slate-50 rounded-lg border border-slate-200">
+                        <p class="font-bold text-slate-800 text-sm">RA2. Avalua les diferents barreres al comerç internacional identificant els diferents tipus d'aranzels i mesures de salvaguarda, així com determinant l'origen de les mercaderies.</p>
+                        <span class="text-xs text-slate-500">Criteris d'aval.: Classificació aranzelària, càlcul del dret d'aranzel, determinació d'origen preferencial i no preferencial (EUR.1, Form A).</span>
+                    </div>
+                    <div class="p-3 bg-slate-50 rounded-lg border border-slate-200">
+                        <p class="font-bold text-slate-800 text-sm">RA3. Elabora i gestiona la documentació necessària per a les operacions d'importació/exportació i introducció/expedició de mercaderies.</p>
+                        <span class="text-xs text-slate-500">Criteris d'aval.: Confecció de Factures, Packing List, documents de transport (CMR, Bill of Lading, AWB) i declaracions intracomunitàries (Intrastat, Model 349).</span>
+                    </div>
+                    <div class="p-3 bg-slate-50 rounded-lg border border-slate-200">
+                        <p class="font-bold text-slate-800 text-sm">RA4. Caracteritza els diferents règims duaners gestionant els tràmits i la documentació corresponent per al despatx de mercaderies.</p>
+                        <span class="text-xs text-slate-500">Criteris d'aval.: Tramitació del DUA de d'importació/exportació, règims especials (perfeccionament, dipòsit, trànsit) i figura de l'OEA.</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Adaptación Comunitat Valenciana -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                    <h3 class="text-lg font-bold text-slate-900 mb-3"><i class="fa-solid fa-landmark gva-orange mr-2"></i> Particularitats de la Comunitat Valenciana</h3>
+                    <ul class="space-y-2 text-sm text-slate-600 list-disc list-inside">
+                        <li>Foment del Clúster Logístic i Portuari (Port de València, Port d'Alacant i Castelló) com a pols d'atracció i pràctica de despatxos duaners de mercaderies reals.</li>
+                        <li>Vinculació directa amb la digitalització empresarial mitjançant l'ús interactiu dels serveis de la Cambra de Comerç de València, Alacant i Castelló, i IVACE+i (Institut Valencià de Competitivitat i Innovació).</li>
+                        <li><strong>Avaluació continuada i formativa</strong>: Segons les directrius de la Conselleria d'Educació, Universitats i Ocupació, posant el pes en les competències transversals (treball col·laboratiu, digitalització i sostenibilitat ODS en el transport de mercaderies).</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                    <h3 class="text-lg font-bold text-slate-900 mb-3"><i class="fa-solid fa-leaf text-emerald-600 mr-2"></i> Enfocament ODS i Digitalització en la FP</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed mb-3">
+                        En aquest curs s'ha eliminat completament l'ús de paper en la tramitació administrativa teòrica. L'alumnat aprendrà l'ús del despatx de duanes 100% telemàtic a través del portal de proves de l'AEAT.
+                    </p>
+                    <div class="flex items-center gap-2 mt-2">
+                        <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-1 rounded">ODS 12: Producció i consum responsables</span>
+                        <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-1 rounded">Digitalització Avançada</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= SECCIÓN 2: CONTENIDOS REORGANIZADOS (APUNTS DETALLATS) ================= -->
+        <section id="tab-continguts" class="tab-content space-y-6">
+            <div class="text-center mb-6">
+                <h2 class="text-2xl font-bold text-slate-900">Continguts i Apunts Teòrics del Mòdul</h2>
+                <p class="text-slate-500 text-sm md:text-base">Selecciona una unitat per a visualitzar les seues sub-pestanyes de Conceptes Clau o els Apunts Detallats per a l'estudi.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+                <!-- Botones Laterales de Unidad -->
+                <div class="flex flex-col space-y-2">
+                    <button onclick="showUnit('u1')" id="u-btn-u1" class="unit-btn active p-4 text-left rounded-lg bg-amber-500 text-slate-950 font-bold border-l-4 border-amber-600 transition flex justify-between items-center">
+                        <span>Unitat 1: Balança de Pagaments</span>
+                        <i class="fa-solid fa-chevron-right text-xs"></i>
+                    </button>
+                    <button onclick="showUnit('u2')" id="u-btn-u2" class="unit-btn p-4 text-left rounded-lg bg-white hover:bg-slate-100 text-slate-700 font-semibold border-l-4 border-slate-300 transition flex justify-between items-center">
+                        <span>Unitat 2: Barreres i Origen</span>
+                        <i class="fa-solid fa-chevron-right text-xs"></i>
+                    </button>
+                    <button onclick="showUnit('u3')" id="u-btn-u3" class="unit-btn p-4 text-left rounded-lg bg-white hover:bg-slate-100 text-slate-700 font-semibold border-l-4 border-slate-300 transition flex justify-between items-center">
+                        <span>Unitat 3: Operacions i Fiscalitat</span>
+                        <i class="fa-solid fa-chevron-right text-xs"></i>
+                    </button>
+                    <button onclick="showUnit('u4')" id="u-btn-u4" class="unit-btn p-4 text-left rounded-lg bg-white hover:bg-slate-100 text-slate-700 font-semibold border-l-4 border-slate-300 transition flex justify-between items-center">
+                        <span>Unitat 4: Règims i Gestió de Duanes</span>
+                        <i class="fa-solid fa-chevron-right text-xs"></i>
+                    </button>
+                </div>
+
+                <!-- Detalles de la Unidad y Contenido de Apuntes Interactivos -->
+                <div class="lg:col-span-3 bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                    
+                    <!-- CONTROL DE SUB-PESTAÑAS INTERNAS (CONCEPTES VS APUNTS) -->
+                    <div class="flex border-b border-slate-200 mb-6 text-sm">
+                        <button onclick="switchSubTab('conceptes')" id="subtab-btn-conceptes" class="subtab-btn active border-b-2 border-amber-500 text-amber-600 px-4 py-2 font-bold flex items-center gap-2">
+                            <i class="fa-solid fa-list-ul"></i> Resum i Conceptes Clau
+                        </button>
+                        <button onclick="switchSubTab('apunts')" id="subtab-btn-apunts" class="subtab-btn text-slate-500 hover:text-slate-800 px-4 py-2 font-semibold flex items-center gap-2">
+                            <i class="fa-solid fa-book text-blue-600"></i> Apunts Detallats (Unitat Completa)
+                        </button>
+                    </div>
+
+                    <!-- CONTENIDO DE APUNTES DINÁMICOS DE CADA UNITAT -->
+                    
+                    <!-- ================= UNITAT 1 ================= -->
+                    <div id="unit-u1" class="unit-content space-y-4">
+                        <!-- Subtab: Conceptes Clau -->
+                        <div class="subtab-content-block conceptes-block space-y-4">
+                            <div class="flex justify-between items-center border-b pb-2">
+                                <h3 class="text-lg font-bold text-slate-900">U1 - Resum Comercial i Econòmic</h3>
+                                <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-0.5 rounded">20 Hores</span>
+                            </div>
+                            <ul class="list-disc list-inside text-sm text-slate-600 space-y-2">
+                                <li><strong>Balança de Pagaments:</strong> Registre de transaccions d'un país amb l'exterior de forma comptable (partida doble).</li>
+                                <li><strong>OMC:</strong> Promoció del lliure comerç regulat globalment.</li>
+                                <li><strong>Integració Econòmica:</strong> Etapes progressives d'unió comercial entre regions.</li>
+                                <li><strong>Fonts:</strong> Portal d'Aduanas de l'AEAT, Eurostat i ICEX.</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Subtab: Apunts Detallats -->
+                        <div class="subtab-content-block apunts-block hidden space-y-6">
+                            <div class="border-l-4 border-blue-600 pl-4 py-1">
+                                <h3 class="text-xl font-bold text-slate-900">Apunts Detallats - Unitat 1: Organismes i Balança de Pagaments</h3>
+                            </div>
+                            
+                            <article class="space-y-4 text-sm text-slate-700 leading-relaxed">
+                                <h4 class="font-bold text-slate-900 text-base border-b pb-1">1. La Balança de Pagaments</h4>
+                                <p>La <strong>Balança de Pagaments</strong> és un document comptable que registra sistemàticament totes les transaccions econòmiques d'un país (residents) amb la resta del món (no residents) durant un període de temps (normalment un any). S'estructura sota les directrius del Fons Monetari Internacional (FMI) seguint el criteri de <strong>partida doble</strong> (cada transacció genera un apunt d'ingrés/variació de passius i un de pagament/variació d'actius).</p>
+                                
+                                <div class="bg-slate-50 p-4 rounded-lg border border-slate-200">
+                                    <p class="font-bold text-xs text-slate-900 mb-2 uppercase tracking-wider">Estructura Detallada:</p>
+                                    <ul class="space-y-2 text-xs">
+                                        <li><strong>1. Compte Corrent (Cuenta Corriente):</strong>
+                                            <ul class="pl-4 list-disc space-y-1">
+                                                <li><em>Balança Comercial (de béns):</em> Exportacions (+) i Importacions (-) de mercaderies físiques.</li>
+                                                <li><em>Balança de Serveis:</em> Serveis de transport, turisme, assegurances, serveis informàtics, etc.</li>
+                                                <li><em>Balança de Rendes Primàries:</em> Rendes del treball (salaris de transfronterers) i rendes del capital (interessos i dividends d'inversions).</li>
+                                                <li><em>Balança de Rendes Secundàries:</em> Transferències corrents sense contrapartida directa (remeses d'immigrants, ajudes públiques corrents, etc.).</li>
+                                            </ul>
+                                        </li>
+                                        <li class="mt-2"><strong>2. Compte de Capital:</strong> Transferències de capital (com els fons estructurals FEDER de la UE per a infraestructures) i l'adquisició o alienació d'actius no financers no produïts (patents, marques, drets d'autor).</li>
+                                        <li class="mt-2"><strong>3. Compte Financer:</strong> Registra la variació neta d'actius i passius financers. S'hi inclouen inversions directes (adquisició d'empreses), inversions de cartera (accions, borsa), una altra inversió (préstecs i dipòsits) i la variació de reserves del Banc d'Espanya.</li>
+                                        <li class="mt-2"><strong>4. Errors i Omissions:</strong> Casella d'ajust per a corregir el desquadrament produït per la dificultat estadística de recollir les dades perfectament.</li>
+                                    </ul>
+                                </div>
+
+                                <h4 class="font-bold text-slate-900 text-base border-b pb-1 mt-6">2. Organització Mundial del Comerç (OMC) i Integració Econòmica</h4>
+                                <p>L'<strong>OMC</strong>, nascuda l'any 1995 com a successora del GATT, té com a missió la liberalització del comerç mundial. Els seus pilars i principis fonamentals són:</p>
+                                <ul class="list-disc list-inside pl-2 space-y-1">
+                                    <li><strong>Clàusula de la Nació Més Afavorida (NMF):</strong> Prohibeix discriminar entre socis comercials; qualsevol avantatge atorgat a un país s'ha d'estendre immediatament a tots els altres membres de l'OMC (amb excepció de les unions duaneres o tractats de lliure comerç autoritzats).</li>
+                                    <li><strong>Principi de Tractament Nacional:</strong> Les mercaderies importades, un cop han entrat al mercat nacional havent pagat aranzels, rebran el mateix tracte fiscal i de regulació que els productes de fabricació local.</li>
+                                </ul>
+
+                                <div class="bg-amber-50 border-l-4 border-amber-500 p-4 rounded-r-lg my-4">
+                                    <p class="font-bold text-xs text-amber-950 uppercase">Els Estadis de la Integració Econòmica Regional:</p>
+                                    <ol class="list-decimal list-inside text-xs text-amber-900 space-y-1 mt-1">
+                                        <li><strong>Àrea de Lliure Comerç:</strong> Els països membres eliminen els aranzels entre ells, però mantenen total llibertat per a aplicar els seus propis aranzels individuals de cara a tercers països (Exemple: el tractat USMCA entre EUA, Mèxic i Canadà).</li>
+                                        <li><strong>Unió Duanera:</strong> S'eliminen els aranzels interns i, a més, s'adopta un <strong>Aranzel Exterior Comú (AEC)</strong> enfront de tercers països (La Unió Europea n'és el millor exemple històric).</li>
+                                        <li><strong>Mercat Comú:</strong> Unió duanera que afegeix la lliure circulació de factors productius: capital i treballadors (no només mercaderies).</li>
+                                        <li><strong>Unió Econòmica i Monetària:</strong> Mercat comú que unifica la política monetària (moneda única com l'Euro i el Banc Central Europeu) i coordina de forma molt estreta les polítiques fiscals nacionals.</li>
+                                    </ol>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+
+                    <!-- ================= UNITAT 2 ================= -->
+                    <div id="unit-u2" class="unit-content hidden space-y-4">
+                        <!-- Subtab: Conceptes Clau -->
+                        <div class="subtab-content-block conceptes-block space-y-4">
+                            <div class="flex justify-between items-center border-b pb-2">
+                                <h3 class="text-lg font-bold text-slate-900">U2 - Resum Barreres i Origen</h3>
+                                <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-0.5 rounded">35 Hores</span>
+                            </div>
+                            <ul class="list-disc list-inside text-sm text-slate-600 space-y-2">
+                                <li><strong>Tipus d'Aranzel:</strong> Ad valorem, específic i mixt.</li>
+                                <li><strong>Barreres No Aranzelàries:</strong> Mesures tècniques, fitosanitàries i contingents.</li>
+                                <li><strong>Origen de la Mercaderia:</strong> Preferencial (acords UE amb tercers) i No Preferencial. Justificació mitjançant EUR.1, REX o declaració en factura.</li>
+                                <li><strong>TARIC:</strong> Codi a 10 dígits de classificació duanera a la UE.</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Subtab: Apunts Detallats -->
+                        <div class="subtab-content-block apunts-block hidden space-y-6">
+                            <div class="border-l-4 border-blue-600 pl-4 py-1">
+                                <h3 class="text-xl font-bold text-slate-900">Apunts Detallats - Unitat 2: Barreres i Origen de Mercaderies</h3>
+                            </div>
+                            
+                            <article class="space-y-4 text-sm text-slate-700 leading-relaxed">
+                                <h4 class="font-bold text-slate-900 text-base border-b pb-1">1. L'Aranzel i altres Barreres Comercials</h4>
+                                <p>L'<strong>aranzel</strong> és un impost exigit a les duanes per la introducció de mercaderies foranes al territori d'un país o d'una unió duanera com la UE. Té una finalitat recaptatòria, però principalment <strong>proteccionista</strong> (encarir el producte importat per a protegir la indústria o agricultura local de la competència exterior).</p>
+                                
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-3 text-xs">
+                                    <div class="p-3 bg-slate-100 rounded-lg border">
+                                        <p class="font-bold text-slate-900 uppercase">Ad Valorem</p>
+                                        <p class="mt-1 text-slate-600">Es calcula com un percentatge sobre el **Valor en Duana** de la mercaderia importada (p. ex., 4,5% sobre el valor CIF).</p>
+                                    </div>
+                                    <div class="p-3 bg-slate-100 rounded-lg border">
+                                        <p class="font-bold text-slate-900 uppercase">Específic</p>
+                                        <p class="mt-1 text-slate-600">S'exigeix una quantitat de diners fixa per unitat física real importada (p. ex., 3,50 € per cada tona mètrica de blat o litre d'alcohol).</p>
+                                    </div>
+                                    <div class="p-3 bg-slate-100 rounded-lg border">
+                                        <p class="font-bold text-slate-900 uppercase">Mixt o Compost</p>
+                                        <p class="mt-1 text-slate-600">Combina ambdós tipus (p. ex., un aranzel del 8% de valor afegit més una taxa fixa de 1,20 € per quilogram de producte).</p>
+                                    </div>
+                                </div>
+
+                                <p><strong>Barreres No Aranzelàries:</strong> Són mesures administratives que impedeixen o limiten el comerç sense utilitzar l'impost d'aranzel directe. Destaquen els <strong>contingents quantitatius</strong> (límit de quilos que poden importar-se d'un país), les barreres de caràcter tècnic (exigir normatives industrials de seguretat exclusives de la UE), i els controls fitosanitaris i sanitaris estrictes a les fronteres (molt habituals en productes frescos, fruites o carns per a evitar plagues).</p>
+
+                                <h4 class="font-bold text-slate-900 text-base border-b pb-1 mt-6">2. L'Origen de les Mercaderies i Proves Documentals</h4>
+                                <p>La determinació de l'<strong>origen</strong> és un dels tres pilars fonamentals de la duana (juntament amb la classificació aranzelària i el valor en duana). Permet saber la "nacionalitat econòmica" del producte i aplicar-li la taxa aranzelària correcta:</p>
+                                <ul class="list-disc list-inside pl-2 space-y-2">
+                                    <li><strong>Origen No Preferencial:</strong> S'aplica a països sense acords comercials bilaterals amb la UE. La regla principal determina que l'origen s'atorga al país on s'ha dut a terme la <strong>darrera transformació substancial</strong>, econòmicament justificada, que acabe amb un canvi de partida aranzelària o que incremente un percentatge determinat de valor afegit local. Es prova mitjançant el <em>Certificat d'Origen de la Cambra de Comerç</em>.</li>
+                                    <li><strong>Origen Preferencial:</strong> S'aplica a països amb acords de lliure comerç signats amb la UE (com Mèxic, Canadà, Xile, o el Regne Unit) o beneficiaris de concessions unilaterals (SGP - Sistema de Preferences Generalitzades). Permet importar mercaderies amb reducció o exempció (0%) d'aranzels.</li>
+                                </ul>
+
+                                <div class="bg-blue-50 border-l-4 border-blue-600 p-4 rounded-r-lg mt-3">
+                                    <p class="font-bold text-xs text-blue-950 uppercase">Documents per a justificar l'origen preferencial:</p>
+                                    <ul class="list-disc list-inside text-xs text-blue-900 space-y-1 mt-1">
+                                        <li><strong>Certificat EUR.1:</strong> Document oficial de la duana d'exportació que certifica l'origen preferencial de la mercaderia física. S'ha de presentar físicament en la duana d'importació.</li>
+                                        <li><strong>Declaració en factura:</strong> Escrit estàndard realitzat pel mateix exportador directament en la factura comercial de venda. Si l'import de l'operació supera els 6.000 €, l'exportador ha d'estar registrat en la duana com a <strong>Exportador Autoritzat</strong>.</li>
+                                        <li><strong>Sistema REX (Registered Exporter System):</strong> Sistema telemàtic de la Unió Europea d'auto-certificació d'origen. Els exportadors es registren i poden emetre declaracions d'origen telemàticament sense intervenció directa d'autoritats governamentals.</li>
+                                    </ul>
+                                </div>
+
+                                <h4 class="font-bold text-slate-900 text-base border-b pb-1 mt-6">3. El codi TARIC (Classificació Aranzelària)</h4>
+                                <p>Qualsevol mercaderia que es pretenga importar o exportar ha de ser classificada amb un codi numèric normalitzat a nivell internacional. L'estructura aranzelària de la Unió Europea s'agrupa de la següent manera:</p>
+                                <div class="font-mono text-xs bg-slate-900 text-slate-100 p-4 rounded-lg space-y-1">
+                                    <p class="text-amber-400 font-bold">Estructura del Codi del TARIC (Exemple: 6403.91.11.00 - Sabates de pell):</p>
+                                    <p>• [64] Primers dos dígits: El CAPÍTOL del Sistema Harmonitzat (SA).</p>
+                                    <p>• [6403] Primers quatre dígits: La PARTIDA del Sistema Harmonitzat (SA).</p>
+                                    <p>• [6403.91] Primers sis dígits: La SUBPARTIDA del Sistema Harmonitzat (SA) - Vàlid a nivell mundial.</p>
+                                    <p>• [6403.91.11] Primers vuit dígits: La NOMENCLATURA COMBINADA (NC) - Criteris d'estadística propis de la Unió Europea.</p>
+                                    <p>• [6403.91.11.00] Tots deu dígits: El codi TARIC - Defineix els aranzels de tercers països, suspensions aranzelàries, drets antidumping i dades de contingents de forma específica.</p>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+
+                    <!-- ================= UNITAT 3 ================= -->
+                    <div id="unit-u3" class="unit-content hidden space-y-4">
+                        <!-- Subtab: Conceptes Clau -->
+                        <div class="subtab-content-block conceptes-block space-y-4">
+                            <div class="flex justify-between items-center border-b pb-2">
+                                <h3 class="text-lg font-bold text-slate-900">U3 - Resum Operacions i Fiscalitat</h3>
+                                <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-0.5 rounded">45 Hores</span>
+                            </div>
+                            <ul class="list-disc list-inside text-sm text-slate-600 space-y-2">
+                                <li><strong>Documents Internacionals:</strong> Factures (Proforma vs Comercial), Llista d'especificacions (Packing list) i Documents de transport (CMR, B/L, AWB).</li>
+                                <li><strong>Fiscalitat de l'IVA:</strong> Exempció en lliuraments intracomunitaris (ROI i VIES). Càlcul de base imposable de l'IVA d'importació.</li>
+                                <li><strong>Estadística:</strong> Declaració INTRASTAT (llindar d'obligatorietat superior a 400.000 €). Model 349.</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Subtab: Apunts Detallats -->
+                        <div class="subtab-content-block apunts-block hidden space-y-6">
+                            <div class="border-l-4 border-blue-600 pl-4 py-1">
+                                <h3 class="text-xl font-bold text-slate-900">Apunts Detallats - Unitat 3: Operacions Intracomunitàries i amb Tercers</h3>
+                            </div>
+                            
+                            <article class="space-y-4 text-sm text-slate-700 leading-relaxed">
+                                <h4 class="font-bold text-slate-900 text-base border-b pb-1">1. Documents de Transport i Comercials</h4>
+                                <p>En el tràfic internacional de mercaderies és de vital importància distingir les funcions dels principals documents de transport. No només justifiquen que el servei s'ha realitzat, sinó que en alguns casos operen com a títols de propietat de la mercaderia:</p>
+                                <ul class="list-disc list-inside pl-2 space-y-2 text-slate-700">
+                                    <li><strong>Carta de port CMR (Transport per carretera):</strong> Document regulat pel Conveni de Ginebra de 1956. Ha d'anar signat pel transportista de carretera i pel remitent. En un tràmit de lliurament intracomunitari (LIC) és la prova jurídica indiscutible davant d'hisenda que la mercaderia ha eixit de territori espanyol.</li>
+                                    <li><strong>Coneixement d'embarcament Marítim (Bill of Lading - B/L):</strong> És un document d'importància cabdal en el transport marítim. Opera com a recepció dels béns pel transportista, contracte de transport i, principalment, com a <strong>títol valor de propietat</strong> de la mercaderia. La part posseïdora de l'original del B/L (o el seu titular mitjançant endós) té dret a reclamar el lliurament del contenidor en la duana de destinació final. Pot ser emés "a l'ordre" (endossable) o "nominatiu".</li>
+                                    <li><strong>Carta de Port Aèria (Air Waybill - AWB):</strong> Document de transport de mercaderies aèries regulat per la IATA. A diferència del B/L marítim, l'AWB <strong>no és un títol de propietat</strong> (no és negociable ni s'emet a l'ordre); la línia aèria lliura les mercaderies a la persona que apareix directament consignada en el document.</li>
+                                </ul>
+
+                                <h4 class="font-bold text-slate-900 text-base border-b pb-1 mt-6">2. L'IVA en el Comerç Intracomunitari (Unió Europea)</h4>
+                                <p>En el mercat únic europeu ja no existeixen fronteres físiques, per tant, s'utilitzen conceptes fiscals diferents d'importació/exportació:</p>
+                                <ul class="list-disc list-inside pl-2 space-y-2">
+                                    <li><strong>Lliurament Intracomunitari de Béns (LIC):</strong> Enviar mercaderia d'Espanya a una empresa d'un altre estat membre de la UE (p. ex., de València a París). Està <strong>exempt d'IVA espanyol</strong> (s'emet factura sense IVA) si es reuneixen dos requisits:</p>
+                                        <ol class="list-decimal list-inside pl-6 text-xs text-slate-600 space-y-1">
+                                            <li>Que s'acredite físicament que la mercaderia ha eixit d'Espanya cap a un altre país europeu (mitjançant carta de port CMR o B/L).</li>
+                                            <li>Que el comprador estranger dispose de NIF-IVA de la UE i conste d'alta en el portal <strong>VIES / ROI</strong> (Registre d'Operadors Intracomunitaris) del seu país.</li>
+                                        </ol>
+                                    </li>
+                                    <li class="mt-2"><strong>Adquisició Intracomunitària de Béns (AIC):</strong> Comprar mercaderia a un proveïdor d'un altre país de la UE (p. ex., un celler de Requena que compra taps de suro a Portugal). L'operació està subjecta a IVA a Espanya, el qual es liquida mitjançant un procediment especial d'<strong>autorepercussió d'IVA</strong> (l'adquirent declara alhora l'IVA suportat i el repercutit en el mateix Model 303 trimestral, resultant un efecte financer neutre o de suma zero).</li>
+                                </ul>
+
+                                <div class="bg-amber-50 border-l-4 border-amber-500 p-4 rounded-r-lg mt-3">
+                                    <p class="font-bold text-xs text-amber-950 uppercase">El Model INTRASTAT i Model 349:</p>
+                                    <p class="text-xs text-amber-900 leading-relaxed mt-1">
+                                        L'<strong>Intrastat</strong> és una declaració exclusivament estadística de caràcter mensual sobre el comerç de béns entre països de la UE. S'ha de presentar obligatòriament quan l'acumulat de compres (introducció) o vendes (expedició) superen el llindar fixat de <strong>400.000 € anuals</strong>. El **Model 349** és de caràcter merament informatiu i recull les operacions i relacions comercials realitzades amb tots els operadors comunitaris donats d'alta al VIES.
+                                    </p>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+
+                    <!-- ================= UNITAT 4 ================= -->
+                    <div id="unit-u4" class="unit-content hidden space-y-4">
+                        <!-- Subtab: Conceptes Clau -->
+                        <div class="subtab-content-block conceptes-block space-y-4">
+                            <div class="flex justify-between items-center border-b pb-2">
+                                <h3 class="text-lg font-bold text-slate-900">U4 - Resum Règims i Gestió de Duanes</h3>
+                                <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-0.5 rounded">40 Hores</span>
+                            </div>
+                            <ul class="list-disc list-inside text-sm text-slate-600 space-y-2">
+                                <li><strong>El DUA (Document Únic Administratiu):</strong> Declaració duanera oficial estructurada en 9 plecs o exemplars.</li>
+                                <li><strong>Règims Duaners Ordinaris:</strong> Despatx de Lliure Pràctica i despatx de Consum.</li>
+                                <li><strong>Règims Duaners Especials:</strong> Trànsit, Perfeccionament Actiu/Passiu, Dipòsits duaners i Àrees Exemptes.</li>
+                                <li><strong>OEA:</strong> Certificació d'Operador Econòmic Autoritzat que redueix els controls de la duana.</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Subtab: Apunts Detallats -->
+                        <div class="subtab-content-block apunts-block hidden space-y-6">
+                            <div class="border-l-4 border-blue-600 pl-4 py-1">
+                                <h3 class="text-xl font-bold text-slate-900">Apunts Detallats - Unitat 4: Règims Duaners i Gestió de Duanes</h3>
+                            </div>
+                            
+                            <article class="space-y-4 text-sm text-slate-700 leading-relaxed">
+                                <h4 class="font-bold text-slate-900 text-base border-b pb-1">1. El DUA i els seus Exemplars (Plecs)</h4>
+                                <p>El <strong>Document Únic Administratiu (DUA)</strong> és el suport de la declaració per escrit d'exportació, importació o trànsit davant l'autoritat duanera de la UE. Consta d'un joc de 9 exemplars o fulls, cadascun d'ells destinat a un fi específic i utilitzats en diferents combinacions:</p>
+                                
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs my-3">
+                                    <div class="bg-slate-50 p-3 rounded border border-slate-200">
+                                        <p class="font-bold text-slate-800">Exportació de Mercaderies</p>
+                                        <ul class="list-disc list-inside mt-1 space-y-1 text-slate-600">
+                                            <li><strong>Plec 1:</strong> Destinat a la duana d'exportació/partida.</li>
+                                            <li><strong>Plec 2:</strong> Destinat a finalitats estadístiques de l'estat d'exportació.</li>
+                                            <li><strong>Plec 3:</strong> Retornat a l'exportador (justifica que ha realitzat el despatx d'exportació).</li>
+                                        </ul>
+                                    </div>
+                                    <div class="bg-slate-50 p-3 rounded border border-slate-200">
+                                        <p class="font-bold text-slate-800">Importació de Mercaderies</p>
+                                        <ul class="list-disc list-inside mt-1 space-y-1 text-slate-600">
+                                            <li><strong>Plec 6:</strong> Destinat a la duana d'importació / destinació final.</li>
+                                            <li><strong>Plec 7:</strong> Destinat a finalitats estadístiques de l'estat d'importació.</li>
+                                            <li><strong>Plec 8:</strong> Retornat a l'importador com a justificant de pagament d'impostos i lliure pràctica.</li>
+                                        </ul>
+                                    </div>
+                                    <div class="bg-slate-50 p-3 rounded border border-slate-200">
+                                        <p class="font-bold text-slate-800">Règims de Trànsit i Altres</p>
+                                        <ul class="list-disc list-inside mt-1 space-y-1 text-slate-600">
+                                            <li><strong>Plec 4:</strong> Per a acompanyar la mercaderia en règim de trànsit.</li>
+                                            <li><strong>Plec 5:</strong> Retornat a la duana de partida per a tancar el trànsit.</li>
+                                            <li><strong>Plec 9:</strong> S'utilitza per a operacions nacionals com a declaració simplificada o canvis de destinació.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <h4 class="font-bold text-slate-900 text-base border-b pb-1 mt-6">2. Els Règims Duaners de la Unió Europea</h4>
+                                <p>El CDU permet als importadors classificar les seues mercaderies sota diferents tractaments duaners segons la destinació econòmica final de la mercaderia:</p>
+                                <ul class="list-disc list-inside pl-2 space-y-3 text-slate-700">
+                                    <li><strong>Despatx de Lliure Pràctica:</strong> Confereix a una mercaderia no pertanyent a la UE (tercers països) l'estatut duaner de mercaderia de la UE. Per a això s'han de liquidar els drets d'aranzel i altres impostos de dret comunitaris a la duana, però la mercaderia encara no pot consumir-se lliurement si no s'ha liquidat també l'IVA estatal.</li>
+                                    <li><strong>Despatx a Consum:</strong> Procés d'importació complet de la mercaderia. Requereix el despatx de lliure pràctica de dalt (aranzel 0% o pagat) més el pagament obligatori immediat de l'IVA de la importació de l'estat i impostos especials (IIEE). A partir d'aquí es mou amb llibertat absoluta pel mercat europeu.</li>
+                                    <li><strong>Trànsit Duaner (Comú / Intern / Extern):</strong> Permet traslladar mercaderia sota control de duana des d'un punt d'entrada a un altre de la Unió (o països tercers adherits com Suïssa o Noruega) suspenent el pagament d'aranzels i IVA mitjançant la presentació d'un document T1 o T2 i d'una fiança de garantia financera de deute duaner.</li>
+                                    <li><strong>Règims de Perfeccionament (Actiu i Passiu):</strong>
+                                        <ul class="pl-6 list-circle space-y-1 mt-1 text-slate-600">
+                                            <li><em>Perfeccionament Actiu (RPA):</em> Permet importar temporalment a la UE mercaderia de tercers països per a reparar-la, acoblar-la o processar-la industrialment **sense pagar aranzels ni IVA**, amb l'obligació posterior de tornar a exportar el producte acabat (compensador) fora del territori europeu.</li>
+                                            <li><em>Perfeccionament Passiu (RPP):</em> Permet exportar temporalment mercaderies de la UE fora del territori de la UE per a transformar-les, reparar-les o polir-les, i després reimportar el producte pagant aranzels **únicament sobre el valor afegit** (cost del treball i peces utilitzades a l'estranger).</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Dipòsit Duaner (DD) i Zones Franques:</strong> Àrees autoritzades per la duana (zones lliures com els consorcis de València o Alacant) on es permet l'emmagatzematge de mercaderies de tercers països de forma indefinida, **suspenent el pagament d'aranzels, IVA i impostos** fins que l'empresa decidisca la seua sortida (exportar-les novament fora de la UE, passar-les a despatx de consum o destruir-les si s'han fet malbé).</li>
+                                </ul>
+                            </article>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= SECCIÓN 3: HERRAMIENTA DE CÁLCULO INTERACTIVO ================= -->
+        <section id="tab-calculadora" class="tab-content space-y-6">
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                <div class="flex items-center gap-3 border-b pb-4 mb-6">
+                    <div class="gva-bg-orange text-white p-2.5 rounded-lg">
+                        <i class="fa-solid fa-calculator text-xl"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-bold text-slate-900">Simulador de Liquidació de Duanes i Importació</h2>
+                        <p class="text-sm text-slate-500">Calculadora pedagògica d'Aranzel Comú, Base Imposable d'IVA de la Importació i total liquidació a la Duana de la Unió Europea.</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- Formulario de Entrada -->
+                    <div class="space-y-4 bg-slate-50 p-5 rounded-lg border border-slate-200">
+                        <h3 class="font-bold text-slate-800 border-b pb-2 flex items-center gap-2 text-sm uppercase tracking-wider">
+                            <i class="fa-solid fa-file-invoice-dollar text-amber-500"></i> Dades de la Factura i Costos (Incoterms)
+                        </h3>
+
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Valor Comercial (Valor Factura / FOB o similar):</label>
+                            <div class="relative">
+                                <input type="number" id="calc-fob" value="15000" class="w-full pl-8 pr-4 py-2 bg-white border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono">
+                                <span class="absolute left-3 top-2.5 text-slate-400 text-xs">€</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Fret i assegurança internacional fins al punt d'entrada a la UE (CIF):</label>
+                            <div class="relative">
+                                <input type="number" id="calc-frete" value="1200" class="w-full pl-8 pr-4 py-2 bg-white border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono">
+                                <span class="absolute left-3 top-2.5 text-slate-400 text-xs">€</span>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Tipus d'Aranzel Comú (%):</label>
+                                <div class="relative">
+                                    <input type="number" step="0.1" id="calc-arancel" value="4.5" class="w-full pl-3 pr-8 py-2 bg-white border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono">
+                                    <span class="absolute right-3 top-2.5 text-slate-400 text-xs">%</span>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Tipus d'IVA Importació (%):</label>
+                                <select id="calc-iva" class="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono">
+                                    <option value="21" selected>21% (General)</option>
+                                    <option value="10">10% (Reduït)</option>
+                                    <option value="4">4% (Superreduït)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Despeses Accessòries dins de la UE (Fret interior des de la duana fins a destinació final, descàrrega, etc.):</label>
+                            <div class="relative">
+                                <input type="number" id="calc-acessorias" value="350" class="w-full pl-8 pr-4 py-2 bg-white border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono">
+                                <span class="absolute left-3 top-2.5 text-slate-400 text-xs">€</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Altres Gravàmens / Impostos de la Importació (Impostos Especials, Antidumping):</label>
+                            <div class="relative">
+                                <input type="number" id="calc-gravamen" value="0" class="w-full pl-8 pr-4 py-2 bg-white border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono">
+                                <span class="absolute left-3 top-2.5 text-slate-400 text-xs">€</span>
+                            </div>
+                        </div>
+
+                        <button onclick="calcularLiquidacio()" class="w-full gva-bg-blue hover:bg-sky-800 text-white font-bold py-3 px-4 rounded-lg shadow-md transition flex items-center justify-center gap-2 text-sm uppercase">
+                            <i class="fa-solid fa-gears"></i> Calcular Liquidació de Duanes
+                        </button>
+                    </div>
+
+                    <!-- Cuadro de Resultados Explicativo -->
+                    <div class="space-y-4">
+                        <h3 class="font-bold text-slate-800 border-b pb-2 flex items-center gap-2 text-sm uppercase tracking-wider">
+                            <i class="fa-solid fa-list-ol text-blue-600"></i> Resultats Detallats i Fórmula de Càlcul
+                        </h3>
+
+                        <div class="bg-slate-900 text-slate-100 p-6 rounded-lg font-mono text-sm space-y-4 shadow-inner">
+                            <div class="flex justify-between border-b border-slate-700 pb-2">
+                                <span>Valor en Duana (A = FOB + Fret/Segur. Int.):</span>
+                                <span id="res-val-duana" class="font-bold text-teal-400">16.200,00 €</span>
+                            </div>
+                            <div class="flex justify-between border-b border-slate-700 pb-2 pl-4 text-xs text-slate-400">
+                                <span>+ Dret d'Aranzel calculat (B = A * % Aranzel):</span>
+                                <span id="res-arancel" class="font-bold">729,00 €</span>
+                            </div>
+                            <div class="flex justify-between border-b border-slate-700 pb-2 pl-4 text-xs text-slate-400">
+                                <span>+ Altres Gravàmens Importació (C):</span>
+                                <span id="res-gravamen" class="font-bold">0,00 €</span>
+                            </div>
+                            <div class="flex justify-between border-b border-slate-700 pb-2 pl-4 text-xs text-slate-400">
+                                <span>+ Despeses Accessòries (D):</span>
+                                <span id="res-acessorias" class="font-bold">350,00 €</span>
+                            </div>
+                            <div class="flex justify-between border-b border-slate-700 pb-2 text-teal-300 font-bold">
+                                <span>= BASE IMPOSABLE DE L'IVA (BI = A + B + C + D):</span>
+                                <span id="res-base-iva">17.279,00 €</span>
+                            </div>
+                            <div class="flex justify-between border-b border-slate-700 pb-2 pl-4 text-xs text-slate-400">
+                                <span>+ Quota de l'IVA Importació (BI * % IVA):</span>
+                                <span id="res-quota-iva" class="font-bold">3.628,59 €</span>
+                            </div>
+                            <div class="flex justify-between pt-4 text-base font-extrabold text-amber-400 border-t border-dashed border-slate-700">
+                                <span>TOTAL DEUTE DUANER A LIQUIDAR (Aranzel + IVA + Grav):</span>
+                                <span id="res-total-liquidacio" class="text-lg">4.357,59 €</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-lg text-xs text-blue-900 leading-relaxed">
+                            <h4 class="font-bold mb-1"><i class="fa-solid fa-graduation-cap"></i> Explicació Pedagògica d'importància a l'aula:</h4>
+                            <p class="mb-2"><strong>Atenció!</strong> L'aranzel forma part del cost d'adquisició de la mercaderia (compte 600 de comptabilitat) i també incrementa la Base Imposable de l'IVA de la importació.</p>
+                            <p>L'IVA liquidat a la importació generalment és un IVA deduïble per a l'empresa importadora a través del Model 303 trimestral de l'AEAT, pero ha de pagar-se immediatament o ajornar-se en cas d'acollir-se a l'IVA diferit (Model 036).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= SECCIÓN 4: ACTIVIDADES Y CASOS PRÁCTICOS ================= -->
+        <section id="tab-activitats" class="tab-content space-y-6">
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                <h2 class="text-2xl font-bold text-slate-900 border-b pb-3 mb-6 flex items-center gap-3">
+                    <i class="fa-solid fa-pencil gva-blue"></i>
+                    Casos Pràctics i Recursos Educatius Oberts (REA)
+                </h2>
+
+                <div class="space-y-6">
+                    <!-- CASO 1: IMPORTACIÓN TERCEROS -->
+                    <div class="border-l-4 border-amber-500 bg-amber-50/50 p-5 rounded-r-xl">
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="bg-amber-100 text-amber-900 text-xs font-bold px-2 py-0.5 rounded">Cas d'Importació i Classificació</span>
+                            <span class="text-xs text-slate-500 font-mono"><i class="fa-solid fa-clock"></i> Recomanat: 3 hores aula</span>
+                        </div>
+                        <h3 class="font-bold text-lg text-slate-900 mb-2">Cas Pràctic 1: Importació de Dispositius d'Emmagatzematge USB de Taiwan</h3>
+                        <p class="text-sm text-slate-600 mb-4 leading-relaxed">
+                            L'empresa <em>València-Tech S.L.</em> realitza una importació de 10.000 unitats de memòries USB d'un proveïdor de Taipei (Taiwan). El preu pactat és de 3,50 €/unitat FOB Port de Keelung. El transport marítim fins al Port de València costa 1.200 € i l'assegurança internacional contractada costa 150 €. El tipus aranzelari del TARIC per a aquest producte és del 0% (exempció sectorial tecnològica), però la Unió Europea aplica un dret d'antidumping provisional del 12,5% sobre aquest producte provinent d'empreses no col·laboradores taiwaneses. El transport interior fins al polígon industrial de Paterna costa 280 €.
+                        </p>
+                        <div class="bg-white p-4 rounded-lg border border-slate-200 shadow-sm text-xs mb-3 space-y-2">
+                            <p class="font-bold text-slate-800">Preguntes de l'exercici a resoldre per l'alumnat:</p>
+                            <ol class="list-decimal list-inside space-y-1 text-slate-600">
+                                <li>Calcula el Valor en Duana de la mercaderia d'acord amb el Codi Duaner de la Unió.</li>
+                                <li>Determina el total a pagar pel dret antidumping i si aquest s'inclou o no en la Base de l'IVA de la importació.</li>
+                                <li>Calcula la Base Imposable i la quota de l'IVA de la importació (21%).</li>
+                                <li>Quins documents de transport i administratius seran obligatoris per a realitzar el despatx de lliure pràctica?</li>
+                            </ol>
+                        </div>
+                        <details class="text-xs text-blue-800 hover:text-blue-900 cursor-pointer font-bold">
+                            <summary class="list-none flex items-center gap-1"><i class="fa-solid fa-eye"></i> Veure Solució i Guia de Resolució</summary>
+                            <div class="bg-white p-4 rounded-lg border border-slate-200 mt-2 text-slate-700 font-normal space-y-2">
+                                <p><strong>Solució explicada:</strong></p>
+                                <p>1. <strong>Valor en Duana:</strong> Valor FOB (10.000 * 3,50 = 35.000 €) + Fret (1.200 €) + Assegurança (150 €) = <strong>36.350 €</strong>. (Es sumen fret i assegurança internacionals fins al punt d'entrada a la UE).</p>
+                                <p>2. <strong>Gravàmens de la importació (Dret Antidumping):</strong> 36.350 € * 12,5% = <strong>4.543,75 €</strong>. Tot i que l'aranzel és del 0%, el dret antidumping s'ha de sumar de forma anàloga com un gravamen aduaner sobre el Valor en Duana.</p>
+                                <p>3. <strong>Base Imposable d'IVA Importació:</strong> Valor en Duana (36.350 €) + Dret Antidumping (4.543,75 €) + Transport interior Paterna (280 €) = <strong>41.173,75 €</strong>.</p>
+                                <p>4. <strong>Quota d'IVA (21%):</strong> 41.173,75 € * 21% = <strong>8.646,49 €</strong>.</p>
+                                <p>5. <strong>Documents necessaris:</strong> Factura comercial original del proveïdor taiwanés, Packing List, Coneixement d'embarcament marítim (Bill of Lading - B/L), i el document del DUA d'importació (amb els plecs corresponents, principalment l'1, 6 i 8).</p>
+                            </div>
+                        </details>
+                    </div>
+
+                    <!-- CASO 2: INTRACOMUNITARIA -->
+                    <div class="border-l-4 border-blue-600 bg-blue-50/50 p-5 rounded-r-xl">
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="bg-blue-100 text-blue-900 text-xs font-bold px-2 py-0.5 rounded">Cas Intracomunitari</span>
+                            <span class="text-xs text-slate-500 font-mono"><i class="fa-solid fa-clock"></i> Recomanat: 2 hores aula</span>
+                        </div>
+                        <h3 class="font-bold text-lg text-slate-900 mb-2">Cas Pràctic 2: Lliurament Intracomunitari de Calcer a Munic</h3>
+                        <p class="text-sm text-slate-600 mb-4 leading-relaxed">
+                            La fàbrica de calcer de senyora <em>D'Elx Confort S.A.</em>, situada al parc empresarial d'Elx, ven una partida de sabates a la tenda de moda alemanya <em>Schuh Mode GmbH</em> de Munic per valor de 24.000 € Ex Works. El transport es realitza mitjançant carretera per mitjà de la transitària valenciana <em>GVA-Trans S.L.</em>, amb un cost de transport de 1.100 € abonat per la part compradora a Alemanya.
+                        </p>
+                        <div class="bg-white p-4 rounded-lg border border-slate-200 shadow-sm text-xs mb-3 space-y-2">
+                            <p class="font-bold text-slate-800">Preguntes de l'exercici a resoldre per l'alumnat:</p>
+                            <ol class="list-decimal list-inside space-y-1 text-slate-600">
+                                <li>Quina fiscalitat en matèria d'IVA té aquesta operació en la factura espanyola? Quines condicions obligatòries s'han de complir?</li>
+                                <li>Com comprova l'empresa il·licitana que el client alemany està habilitat per a operar sense IVA?</li>
+                                <li>A quins models declaratius i informatius periòdics obliga aquesta operació a l'empresa d'Elx?</li>
+                                <li>Quin document de transport justifica que la mercaderia ha eixit de territori espanyol?</li>
+                            </ol>
+                        </div>
+                        <details class="text-xs text-blue-800 hover:text-blue-900 cursor-pointer font-bold">
+                            <summary class="list-none flex items-center gap-1"><i class="fa-solid fa-eye"></i> Veure Solució i Guia de Resolució</summary>
+                            <div class="bg-white p-4 rounded-lg border border-slate-200 mt-2 text-slate-700 font-normal space-y-2">
+                                <p><strong>Solució explicada:</strong></p>
+                                <p>1. <strong>Fiscalitat de l'operació:</strong> És un <strong>Lliurament Intracomunitari de béns (LIC)</strong> exempt d'IVA d'acord amb l'article 25 de la Llei de l'IVA de l'Estat espanyol. Per a l'exempció és requisit obligatori que s'acredite el transport de la mercaderia fora d'Espanya i que el comprador estiga donat d'alta com a operador intracomunitari.</p>
+                                <p>2. <strong>Comprovació del client:</strong> L'empresa espanyola ha d'accedir al portal <strong>VIES (Vat Information Exchange System)</strong> de l'Agència Tributària i introduir el NIF-IVA de l'empresa alemanya (amb prefix DE) per a verificar que està registrat correctament.</p>
+                                <p>3. <strong>Obligacions fiscals/estadístiques:</strong>
+                                    <ul class="pl-4 list-disc space-y-1">
+                                        <li>Inclusió en el <strong>Model 303</strong> trimestral en la casella corresponent de lliuraments intracomunitaris.</li>
+                                        <li>Declaració en el resum anual <strong>Model 390</strong>.</li>
+                                        <li>Declaració informativa d'operacions intracomunitàries <strong>Model 349</strong> de caràcter periòdic.</li>
+                                        <li>Presentació de la declaració d'<strong>Intrastat</strong>, sempre que s'haja superat el llindar de lliuraments anuals fixat per la duana espanyola (actualment de 400.000 € anuals de flux).</li>
+                                    </ul>
+                                </p>
+                                <p>4. <strong>Document de Transport:</strong> La carta de port de transport per carretera <strong>CMR</strong>, signada per la transitària de transport, el carregador d'Elx i amb el segell o signatura de recepció pel destinatari de Munic.</p>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= SECCIÓN 5: AUTOEVALUACIÓN INTERACTIVA ================= -->
+        <section id="tab-autoavaluacio" class="tab-content space-y-6">
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                <div class="flex items-center gap-3 border-b pb-4 mb-6">
+                    <div class="gva-bg-orange text-white p-2.5 rounded-lg">
+                        <i class="fa-solid fa-clipboard-question text-xl"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-bold text-slate-900">Autoavaluació Interactiva per a l'Alumnat</h2>
+                        <p class="text-sm text-slate-500">Posa a prova els teus coneixements teòrics abans dels exàmens del mòdul. 5 preguntes clau d'oposició i exàmens d'altres anys.</p>
+                    </div>
+                </div>
+
+                <!-- Test Questions Container -->
+                <div id="test-container" class="space-y-6">
+                    <!-- Pregunta 1 -->
+                    <div class="p-4 bg-slate-50 rounded-lg border border-slate-200" data-q="1">
+                        <p class="font-bold text-slate-800 text-sm mb-3">1. Com s'anomena la balança on es registren els flets i assegurances associats al transport internacional de mercaderies quan s'utilitzen empreses estrangeres?</p>
+                        <div class="space-y-2 text-xs">
+                            <label class="flex items-center gap-2 p-2 bg-white rounded border hover:bg-slate-100 cursor-pointer">
+                                <input type="radio" name="q1" value="A"> A) Balança Comercial (o de béns).
+                            </label>
+                            <label class="flex items-center gap-2 p-2 bg-white rounded border hover:bg-slate-100 cursor-pointer">
+                                <input type="radio" name="q1" value="B"> B) Balança de Serveis.
+                            </label>
+                            <label class="flex items-center gap-2 p-2 bg-white rounded border hover:bg-slate-100 cursor-pointer">
+                                <input type="radio" name="q1" value="C"> C) Balança de Rendes Primàries.
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Pregunta 2 -->
+                    <div class="p-4 bg-slate-50 rounded-lg border border-slate-200" data-q="2">
+                        <p class="font-bold text-slate-800 text-sm mb-3">2. Quin és el codi d'identificació de les mercaderies a nivell europeu que consta de 8 dígits i que inclou la Nomenclatura Combinada per a estadístiques?</p>
+                        <div class="space-y-2 text-xs">
+                            <label class="flex items-center gap-2 p-2 bg-white rounded border hover:bg-slate-100 cursor-pointer">
+                                <input type="radio" name="q2" value="A"> A) Codi TARIC.
+                            </label>
+                            <label class="flex items-center gap-2 p-2 bg-white rounded border hover:bg-slate-100 cursor-pointer">
+                                <input type="radio" name="q2" value="B"> B) Partida de l'Harmonitzat (SA).
+                            </label>
+                            <label class="flex items-center gap-2 p-2 bg-white rounded border hover:bg-slate-100 cursor-pointer">
+                                <input type="radio" name="q2" value="C"> C) Nomenclatura Combinada (NC).
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Pregunta 3 -->
+                    <div class="p-4 bg-slate-50 rounded-lg border border-slate-200" data-q="3">
+                        <p class="font-bold text-slate-800 text-sm mb-3">3. En un despatx de duanes d'importació (països tercers), quin d'aquests imports NO s'incorpora en la Base Imposable de l'IVA de la importació?</p>
+                        <div class="space-y-2 text-xs">
+                            <label class="flex items-center gap-2 p-2 bg-white rounded border hover:bg-slate-100 cursor-pointer">
+                                <input type="radio" name="q3" value="A"> A) L'aranzel ad-valorem pagat en la duana.
+                            </label>
+                            <label class="flex items-center gap-2 p-2 bg-white rounded border hover:bg-slate-100 cursor-pointer">
+                                <input type="radio" name="q3" value="B"> B) Les despeses de transport interior dins de la UE realitzades després de la duana, si aquestes ja són conegudes i consten fins a la destinació final de l'empresa.
+                            </label>
+                            <label class="flex items-center gap-2 p-2 bg-white rounded border hover:bg-slate-100 cursor-pointer">
+                                <input type="radio" name="q3" value="C"> C) El dret antidumping provisional.
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Pregunta 4 -->
+                    <div class="p-4 bg-slate-50 rounded-lg border border-slate-200" data-q="4">
+                        <p class="font-bold text-slate-800 text-sm mb-3">4. Quin és el certificat d'origen que s'utilitza actualment en l'àmbit de la Unió Europea per a certificar l'origen preferencial de les mercaderies exportades cap a un país tercers amb acord comercial?</p>
+                        <div class="space-y-2 text-xs">
+                            <label class="flex items-center gap-2 p-2 bg-white rounded border hover:bg-slate-100 cursor-pointer">
+                                <input type="radio" name="q4" value="A"> A) Certificat EUR.1.
+                            </label>
+                            <label class="flex items-center gap-2 p-2 bg-white rounded border hover:bg-slate-100 cursor-pointer">
+                                <input type="radio" name="q4" value="B"> B) Certificat FORM A.
+                            </label>
+                            <label class="flex items-center gap-2 p-2 bg-white rounded border hover:bg-slate-100 cursor-pointer">
+                                <input type="radio" name="q4" value="C"> C) Certificat de la Cambra d'Espanya general de caràcter no preferencial.
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Pregunta 5 -->
+                    <div class="p-4 bg-slate-50 rounded-lg border border-slate-200" data-q="5">
+                        <p class="font-bold text-slate-800 text-sm mb-3">5. Com es coneix el document d'origen que s'obté de forma automatitzada i directa pel mateix exportador que es registra en la base de dades REX de la Unió Europea?</p>
+                        <div class="space-y-2 text-xs">
+                            <label class="flex items-center gap-2 p-2 bg-white rounded border hover:bg-slate-100 cursor-pointer">
+                                <input type="radio" name="q5" value="A"> A) Declaració en factura realitzada per exportador registrat.
+                            </label>
+                            <label class="flex items-center gap-2 p-2 bg-white rounded border hover:bg-slate-100 cursor-pointer">
+                                <input type="radio" name="q5" value="B"> B) Certificat telemàtic de la duana de València.
+                            </label>
+                            <label class="flex items-center gap-2 p-2 bg-white rounded border hover:bg-slate-100 cursor-pointer">
+                                <input type="radio" name="q5" value="C"> C) Model 036 digitalizat.
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-6 flex flex-col md:flex-row gap-4 items-center justify-between border-t pt-4">
+                    <button onclick="corregirTest()" class="gva-bg-blue hover:bg-sky-800 text-white font-bold py-3 px-6 rounded-lg shadow-md transition flex items-center gap-2 text-sm uppercase">
+                        <i class="fa-solid fa-graduation-cap"></i> Corregir Test Interactiu
+                    </button>
+                    <div id="test-result" class="hidden p-3 rounded-lg text-sm font-bold"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= SECCIÓN 6: RÚBRICAS DE EVALUACIÓN ================= -->
+        <section id="tab-rubriques" class="tab-content space-y-6">
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center border-b pb-4 mb-6">
+                    <div>
+                        <h2 class="text-2xl font-bold text-slate-900">Rúbriques d'Avaluació Segons Nova FP</h2>
+                        <p class="text-sm text-slate-500">Instruments digitals d'avaluació transparent, basats en competències i vinculats directament als Criteris d'Avaluació de la Comunitat Valenciana.</p>
+                    </div>
+                    <span class="mt-2 md:mt-0 bg-emerald-100 text-emerald-800 text-xs font-bold px-3 py-1.5 rounded-full"><i class="fa-solid fa-check mr-1"></i> Aprovat per Departament</span>
+                </div>
+
+                <!-- Selección de Rúbrica -->
+                <div class="flex space-x-2 border-b mb-4">
+                    <button onclick="showRubric('r1')" id="r-btn-r1" class="rub-btn active border-b-2 border-blue-600 px-4 py-2 text-sm font-bold text-blue-600">
+                        Rúbrica: DUA i Gestió Duanera
+                    </button>
+                    <button onclick="showRubric('r2')" id="r-btn-r2" class="rub-btn px-4 py-2 text-sm font-semibold text-slate-500 hover:text-slate-800">
+                        Rúbrica: Operació Intracomunitària
+                    </button>
+                </div>
+
+                <!-- Detalle Rúbrica 1 -->
+                <div id="rub-r1" class="rub-content space-y-4">
+                    <p class="text-xs text-slate-500 leading-relaxed mb-4">
+                        Aquesta rúbrica s'aplica per a avaluar el projecte de simulació on l'alumnat emplena digitalment un DUA d'exportació/importació des de la web de la duana, associant documents de transport i fiscals de forma correcta. (Vila-real, València, Alacant).
+                    </p>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse border border-slate-200 text-xs">
+                            <thead>
+                                <tr class="bg-slate-100 text-slate-800 uppercase font-bold text-[10px] tracking-wider">
+                                    <th class="border border-slate-200 p-3 w-1/4">Aspecte / Criteri (RA4)</th>
+                                    <th class="border border-slate-200 p-3 bg-red-50 text-red-900">Insuficient (1-4)</th>
+                                    <th class="border border-slate-200 p-3 bg-amber-50 text-amber-900">Aprovat (5-6)</th>
+                                    <th class="border border-slate-200 p-3 bg-blue-50 text-blue-900">Notable (7-8)</th>
+                                    <th class="border border-slate-200 p-3 bg-emerald-50 text-emerald-900">Excel·lent (9-10)</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-200">
+                                <tr>
+                                    <td class="border border-slate-200 p-3 font-semibold bg-slate-50">Ompliment del DUA de d'importació (Pes: 40%)</td>
+                                    <td class="border border-slate-200 p-3">No sap identificar les caselles clau (com exportador, valor, lloc d'entrada). Deixa el formulari buit o amb errors crítics de càlcul.</td>
+                                    <td class="border border-slate-200 p-3">Emplena correctament les caselles bàsiques del DUA (1, 8, 14, 20 i 37) amb algun error lleu sense importància que no invalida el procediment d'importació.</td>
+                                    <td class="border border-slate-200 p-3">Completa el document gairebé íntegre amb claredat. Relaciona correctament els codis TARIC amb el tipus impositiu del producte de forma autònoma.</td>
+                                    <td class="border border-slate-200 p-3">Ompliment perfecte del DUA de mercaderies complexes. Enllaça el despatx amb exempcions i resolució d'incidències duaneres de forma professional.</td>
+                                </tr>
+                                <tr>
+                                    <td class="border border-slate-200 p-3 font-semibold bg-slate-50">Càlcul de tributs i base d'IVA (Pes: 30%)</td>
+                                    <td class="border border-slate-200 p-3">Errors greus de concepte en la base d'IVA. No incorpora els flets en el càlcul del Valor en Duana.</td>
+                                    <td class="border border-slate-200 p-3">Càlcul correcte de la liquidació d'aranzels però comet petits errors en afegir les despeses accessòries nacionals a la base de l'IVA.</td>
+                                    <td class="border border-slate-200 p-3">Calcula perfectament l'aranzel comú, la quota tributària de l'IVA de la importació i els possibles impostos especials seguint la legalitat.</td>
+                                    <td class="border border-slate-200 p-3">Domini total dels càlculs aranzelaris fins i tot amb antidumpings o reduccions preferencials complexes. Analitza opcions d'estalvi fiscal per a l'empresa.</td>
+                                </tr>
+                                <tr>
+                                    <td class="border border-slate-200 p-3 font-semibold bg-slate-50">Documentació annexa (Pes: 30%)</td>
+                                    <td class="border border-slate-200 p-3">Incapacitat de connectar el document de transport comercial (BL/CMR) amb les dades declarades en la duana. Falten la meitat dels fitxers.</td>
+                                    <td class="border border-slate-200 p-3">Presenta la factura comercial de forma estructurada, la llista de contingut i una carta de port vàlida, encara que hi ha llacunes menors en algunes dades de pes o volums.</td>
+                                    <td class="border border-slate-200 p-3">Estructura perfecta de tot l'expedient de l'operació d'importació (Packing, Factures, Orígens i Transport). Totes les dades concorden exactament amb el DUA.</td>
+                                    <td class="border border-slate-200 p-3">Genera el portafolis digitalitzat complet i en perfecte orde, llest per a passar qualsevol auditoria física o documental dels inspectors duaners de l'AEAT.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Detalle Rúbrica 2 -->
+                <div id="rub-r2" class="rub-content hidden space-y-4">
+                    <p class="text-xs text-slate-500 leading-relaxed mb-4">
+                        Aquesta rúbrica s'aplica per a avaluar les tasques associades als tràmits fiscals intracomunitaris (Intrastat, ROI, Model 349 i facturació internacional exempta).
+                    </p>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse border border-slate-200 text-xs">
+                            <thead>
+                                <tr class="bg-slate-100 text-slate-800 uppercase font-bold text-[10px] tracking-wider">
+                                    <th class="border border-slate-200 p-3 w-1/4">Aspecte / Criteri (RA3)</th>
+                                    <th class="border border-slate-200 p-3 bg-red-50 text-red-900">Insuficient (1-4)</th>
+                                    <th class="border border-slate-200 p-3 bg-amber-50 text-amber-900">Aprovat (5-6)</th>
+                                    <th class="border border-slate-200 p-3 bg-blue-50 text-blue-900">Notable (7-8)</th>
+                                    <th class="border border-slate-200 p-3 bg-emerald-50 text-emerald-900">Excel·lent (9-10)</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-200">
+                                <tr>
+                                    <td class="border border-slate-200 p-3 font-semibold bg-slate-50">Tramitació i Declaració d'Intrastat (Pes: 40%)</td>
+                                    <td class="border border-slate-200 p-3">No sap identificar quan és obligatori el tràmit d'Intrastat ni sap buscar els codis de les províncies de procedència o règims de transport.</td>
+                                    <td class="border border-slate-200 p-3">Determina amb èxit si es supera el llindar fixat de 400.000 € anuals i omple les caselles bàsiques de la declaració telemàtica mensual sense gaires errades.</td>
+                                    <td class="border border-slate-200 p-3">Declaració impecable d'introducció/expedició. Associa els incoterms, codis de condicions de lliurament i la naturalesa de la transacció correctament.</td>
+                                    <td class="border border-slate-200 p-3">Capaç de resoldre operacions triangulars intracomunitàries de gran complexitat i declarar-les en Intrastat explicant-ho als seus companys.</td>
+                                </tr>
+                                <tr>
+                                    <td class="border border-slate-200 p-3 font-semibold bg-slate-50">Model 349 d'IVA (Pes: 30%)</td>
+                                    <td class="border border-slate-200 p-3">No comprén el caràcter informatiu del Model 349 ni la seua vinculació amb el model periòdic 303 de liquidació general.</td>
+                                    <td class="border border-slate-200 p-3">Emplena correctament les caselles identificatives de clients i proveïdors intracomunitaris tot i oblidar alguna petita declaració de devolució o rectificació.</td>
+                                    <td class="border border-slate-200 p-3">Completa i quadrat el Model 349 en coordinació amb els lliuraments i adquisicions de les factures comercials de l'empresa sense errors d'arredoniment.</td>
+                                    <td class="border border-slate-200 p-3">Domini absolut del model, explicant les conseqüències administratives i les possibles sancions per part de l'AEAT si no concorden les dades declarades per ambdues parts.</td>
+                                </tr>
+                                <tr>
+                                    <td class="border border-slate-200 p-3 font-semibold bg-slate-50">Verificació en VIES (Pes: 30%)</td>
+                                    <td class="border border-slate-200 p-3">No coneix la importància de verificar els operadors en el ROI de la AEAT, emetent factures sense IVA a entitats no habilitades.</td>
+                                    <td class="border border-slate-200 p-3">S'enrecorda de comprovar el client alemany o francés, encara que té dubtes sobre les accions que cal prendre en cas que el NIF done un error de validació.</td>
+                                    <td class="border border-slate-200 p-3">Realitza les comprovacions amb rapidesa, sap extraure el certificat VIES i aconsella l'emissió de factures amb o sense repercussió d'IVA espanyol amb agilitat.</td>
+                                    <td class="border border-slate-200 p-3">Actua com a assessor en operacions internacionals resolent problemes complexes de validació ROI i assessorant sobre l'alta al cens (Model 036).</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- PIE DE PAGINA -->
+    <footer class="bg-slate-900 text-slate-400 py-8 border-t border-slate-800 text-xs text-center">
+        <div class="container mx-auto px-4 space-y-3">
+            <p class="font-bold text-slate-200">Plataforma Educativa de Suport Presencial per a l'Aula de Comerç Internacional</p>
+            <p>Creat per al Departament de Comerç i Màrqueting d'un Institut Públic de la Comunitat Valenciana • Curs Acadèmic 2025-2026</p>
+            <div class="flex justify-center space-x-4 text-slate-500">
+                <a href="#" class="hover:text-amber-500 transition">Contacte Professorat</a>
+                <span>•</span>
+                <a href="#" class="hover:text-amber-500 transition">Manual de l'Estudiant</a>
+                <span>•</span>
+                <a href="#" class="hover:text-amber-500 transition">Condicions d'Ús Llicència CC BY-NC-SA</a>
+            </div>
+            <p class="text-[10px] text-slate-600">Adaptat de les directrius oficials de Conselleria d'Educació de la Generalitat Valenciana • Nova FP LOMLOE 2025/2026</p>
+        </div>
+    </footer>
+
+    <!-- LOGICA SCRIPT INTERACTIVA -->
+    <script>
+        // Pestañas Principales de la Web
+        function switchTab(tabId) {
+            // Desactivar todos los contenidos de pestañas
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            // Activar la pestaña clicada
+            document.getElementById('tab-' + tabId).classList.add('active');
+
+            // Actualizar el diseño del botón activo en la barra de navegación
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('bg-amber-500', 'text-slate-950');
+                btn.classList.add('text-white');
+            });
+            const activeBtn = document.getElementById('tab-btn-' + tabId);
+            activeBtn.classList.remove('text-white');
+            activeBtn.classList.add('bg-amber-500', 'text-slate-950');
+        }
+
+        // Navegación interna por Unidades Temáticas (Unitat 1 a 4)
+        function showUnit(unitId) {
+            document.querySelectorAll('.unit-content').forEach(u => {
+                u.classList.add('hidden');
+            });
+            document.getElementById('unit-' + unitId).classList.remove('hidden');
+
+            document.querySelectorAll('.unit-btn').forEach(btn => {
+                btn.classList.remove('bg-amber-500', 'text-slate-950', 'font-bold', 'border-amber-600');
+                btn.classList.add('bg-white', 'text-slate-700', 'font-semibold', 'border-slate-300');
+            });
+
+            const activeBtn = document.getElementById('u-btn-' + unitId);
+            activeBtn.classList.remove('bg-white', 'text-slate-700', 'font-semibold', 'border-slate-300');
+            activeBtn.classList.add('bg-amber-500', 'text-slate-950', 'font-bold', 'border-amber-600');
+        }
+
+        // CONTROL DE SUBPESTAÑAS INTERNAS DE APUNTS (CONCEPTES CLAU VS APUNTS COMPLETES)
+        function switchSubTab(subTabId) {
+            // Ocultar todos los bloques de las subtab
+            document.querySelectorAll('.subtab-content-block').forEach(block => {
+                block.classList.add('hidden');
+            });
+            
+            // Mostrar los bloques correspondientes a la sub-pestaña seleccionada (conceptes o apunts)
+            document.querySelectorAll('.' + subTabId + '-block').forEach(block => {
+                block.classList.remove('hidden');
+            });
+
+            // Estilos de los botones de sub-pestaña
+            document.querySelectorAll('.subtab-btn').forEach(btn => {
+                btn.classList.remove('border-b-2', 'border-amber-500', 'text-amber-600', 'font-bold');
+                btn.classList.add('text-slate-500', 'font-semibold');
+            });
+
+            const activeSubBtn = document.getElementById('subtab-btn-' + subTabId);
+            activeSubBtn.classList.remove('text-slate-500', 'font-semibold');
+            activeSubBtn.classList.add('border-b-2', 'border-amber-500', 'text-amber-600', 'font-bold');
+        }
+
+        // Navegación interna de Rúbricas
+        function showRubric(rubId) {
+            document.querySelectorAll('.rub-content').forEach(r => {
+                r.classList.add('hidden');
+            });
+            document.getElementById('rub-' + rubId).classList.remove('hidden');
+
+            document.querySelectorAll('.rub-btn').forEach(btn => {
+                btn.classList.remove('border-b-2', 'border-blue-600', 'text-blue-600', 'font-bold');
+                btn.classList.add('text-slate-500', 'font-semibold');
+            });
+
+            const activeBtn = document.getElementById('r-btn-' + rubId);
+            activeBtn.classList.remove('text-slate-500', 'font-semibold');
+            activeBtn.classList.add('border-b-2', 'border-blue-600', 'text-blue-600', 'font-bold');
+        }
+
+        // Lógica de Cálculo de Liquidación Aduanera e Impuestos de Importación
+        function calcularLiquidacio() {
+            // Obtener datos
+            const fob = parseFloat(document.getElementById('calc-fob').value) || 0;
+            const fret = parseFloat(document.getElementById('calc-frete').value) || 0;
+            const pctArancel = parseFloat(document.getElementById('calc-arancel').value) || 0;
+            const pctIva = parseFloat(document.getElementById('calc-iva').value) || 0;
+            const despesesAccessories = parseFloat(document.getElementById('calc-acessorias').value) || 0;
+            const altresGravamens = parseFloat(document.getElementById('calc-gravamen').value) || 0;
+
+            // Fórmulas
+            const valorEnDuana = fob + fret;
+            const dretArancel = valorEnDuana * (pctArancel / 100);
+            const baseImposableIva = valorEnDuana + dretArancel + altresGravamens + despesesAccessories;
+            const quotaIva = baseImposableIva * (pctIva / 100);
+            const totalLiquidacio = dretArancel + altresGravamens + quotaIva;
+
+            // Imprimir resultados en pantalla formateados a euros
+            document.getElementById('res-val-duana').innerText = valorEnDuana.toLocaleString('ca-ES', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + " €";
+            document.getElementById('res-arancel').innerText = dretArancel.toLocaleString('ca-ES', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + " €";
+            document.getElementById('res-gravamen').innerText = altresGravamens.toLocaleString('ca-ES', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + " €";
+            document.getElementById('res-acessorias').innerText = despesesAccessories.toLocaleString('ca-ES', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + " €";
+            document.getElementById('res-base-iva').innerText = baseImposableIva.toLocaleString('ca-ES', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + " €";
+            document.getElementById('res-quota-iva').innerText = quotaIva.toLocaleString('ca-ES', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + " €";
+            document.getElementById('res-total-liquidacio').innerText = totalLiquidacio.toLocaleString('ca-ES', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + " €";
+        }
+
+        // Respuestas correctas del Autoaprendizaje interactivo
+        const respostesCorrectes = {
+            q1: 'B',
+            q2: 'C',
+            q3: 'B',
+            q4: 'A',
+            q5: 'A'
+        };
+
+        function corregirTest() {
+            let encerts = 0;
+            const totalPreguntes = 5;
+
+            // Recorrer preguntas
+            for (let i = 1; i <= totalPreguntes; i++) {
+                const radd = document.querySelector(`input[name="q${i}"]:checked`);
+                const qBlock = document.querySelector(`div[data-q="${i}"]`);
+
+                // Resetear color de bloque de pregunta
+                qBlock.classList.remove('border-emerald-500', 'bg-emerald-50/50', 'border-red-500', 'bg-red-50/50');
+
+                if (radd) {
+                    if (radd.value === respostesCorrectes[`q${i}`]) {
+                        encerts++;
+                        qBlock.classList.add('border-emerald-500', 'bg-emerald-50/50');
+                    } else {
+                        qBlock.classList.add('border-red-500', 'bg-red-50/50');
+                    }
+                } else {
+                    qBlock.classList.add('border-red-500', 'bg-red-50/50'); // Si se deja en blanco es incorrecto
+                }
+            }
+
+            const resultatDiv = document.getElementById('test-result');
+            resultatDiv.classList.remove('hidden', 'bg-red-100', 'text-red-900', 'bg-emerald-100', 'text-emerald-900', 'bg-amber-100', 'text-amber-900');
+
+            const nota = (encerts / totalPreguntes) * 10;
+
+            if (nota >= 7) {
+                resultatDiv.classList.add('bg-emerald-100', 'text-emerald-900');
+                resultatDiv.innerHTML = `<i class="fa-solid fa-circle-check"></i> Enhorabona! Has encertat ${encerts} de ${totalPreguntes} preguntes. Nota: <strong>${nota.toFixed(1)} / 10</strong>. Domines perfectament els conceptes!`;
+            } else if (nota >= 5) {
+                resultatDiv.classList.add('bg-amber-100', 'text-amber-900');
+                resultatDiv.innerHTML = `<i class="fa-solid fa-circle-exclamation"></i> Aprovat ajustat. Has encertat ${encerts} de ${totalPreguntes} preguntes. Nota: <strong>${nota.toFixed(1)} / 10</strong>. Et recomanem revisar les unitats temàtiques abans d'anar a l'examen.`;
+            } else {
+                resultatDiv.classList.add('bg-red-100', 'text-red-900');
+                resultatDiv.innerHTML = `<i class="fa-solid fa-circle-xmark"></i> Cal estudiar més. Has encertat només ${encerts} de ${totalPreguntes} preguntes. Nota: <strong>${nota.toFixed(1)} / 10</strong>. Repassa detingudament els temes 2 i 3 de fiscalitat i aranzels.`;
+            }
+        }
+    </script>
+</body>
+</html>
