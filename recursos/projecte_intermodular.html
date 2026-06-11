@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia Metodològica: Seguiment de Projectes Intermodulars - CFGS Comerç Internacional</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght=300;400;500;600;700;800&family=Fira+Code:wght=400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .code-font {
+            font-family: 'Fira Code', monospace;
+        }
+        .gva-blue { color: #005691; }
+        .gva-bg-blue { background-color: #005691; }
+        .gva-orange { color: #f37021; }
+        .gva-bg-orange { background-color: #f37021; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col justify-between">
+
+    <!-- CABECERA DE LA GUIA DOCENTE -->
+    <header class="gva-bg-blue text-white shadow-lg border-b-4 border-amber-500">
+        <div class="container mx-auto px-4 py-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center gap-4">
+                    <div class="bg-white p-3 rounded-xl shadow-inner flex items-center justify-center">
+                        <span class="font-extrabold text-3xl tracking-wider text-amber-500">GVA</span>
+                    </div>
+                    <div>
+                        <span class="bg-amber-500 text-slate-950 text-[10px] font-extrabold uppercase px-2.5 py-0.5 rounded-full">Guia d'Implementació Metodològica</span>
+                        <h1 class="text-2xl md:text-3xl font-extrabold tracking-tight mt-1">El Projecte Intermodular de la Nova FP</h1>
+                        <p class="text-xs md:text-sm text-blue-200 mt-1 uppercase tracking-widest font-semibold">CFGS Comerç Internacional • Eines Digitals i Metodologies Àgils per a l'Aula</p>
+                    </div>
+                </div>
+                <div class="text-right border-l-4 border-amber-500 pl-4 md:border-l-2 md:pl-6">
+                    <p class="text-sm font-bold"><i class="fa-solid fa-graduation-cap text-amber-400 mr-2"></i>Departament de Comerç i Màrqueting</p>
+                    <p class="text-xs text-slate-200">Manual per a la Coordinació i Gestió de l'Aula de Cicle</p>
+                    <p class="text-[10px] text-amber-300 font-semibold mt-1">Adaptat a la Llei Orgànica 3/2022</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- MENÚ LATERAL Y DISEÑO DE SECCIONES -->
+    <div class="flex-grow container mx-auto px-4 py-8 flex flex-col lg:flex-row gap-8">
+        
+        <!-- SIDEBAR DE NAVEGACIÓN -->
+        <aside class="w-full lg:w-1/4 flex flex-col gap-3">
+            <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200 sticky top-24">
+                <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3 pl-2">Seccions de la Guia</p>
+                <nav class="flex flex-col gap-1.5" id="navigation-tabs">
+                    <button onclick="changeSection('intro')" id="btn-intro" class="nav-btn active flex items-center gap-3 w-full text-left px-4 py-3 text-sm font-semibold rounded-lg bg-blue-50 text-blue-900 border-l-4 border-blue-600 transition">
+                        <i class="fa-solid fa-compass w-5 text-center"></i>
+                        <span>1. Introducció i Repte</span>
+                    </button>
+                    <button onclick="changeSection('ia')" id="btn-ia" class="nav-btn flex items-center gap-3 w-full text-left px-4 py-3 text-sm font-semibold rounded-lg text-slate-600 hover:bg-slate-50 border-l-4 border-transparent transition">
+                        <i class="fa-solid fa-robot w-5 text-center text-blue-600"></i>
+                        <span>2. El Co-Docent d'IA (Exemples)</span>
+                    </button>
+                    <button onclick="changeSection('eines')" id="btn-eines" class="nav-btn flex items-center gap-3 w-full text-left px-4 py-3 text-sm font-semibold rounded-lg text-slate-600 hover:bg-slate-50 border-l-4 border-transparent transition">
+                        <i class="fa-solid fa-layer-group w-5 text-center"></i>
+                        <span>3. Alternatives a OneNote</span>
+                    </button>
+                    <button onclick="changeSection('scrum')" id="btn-scrum" class="nav-btn flex items-center gap-3 w-full text-left px-4 py-3 text-sm font-semibold rounded-lg text-slate-600 hover:bg-slate-50 border-l-4 border-transparent transition">
+                        <i class="fa-solid fa-hourglass-half w-5 text-center text-amber-500"></i>
+                        <span>4. Metodologia Scrum (Sprints)</span>
+                    </button>
+                    <button onclick="changeSection('avaluacio')" id="btn-avaluacio" class="nav-btn flex items-center gap-3 w-full text-left px-4 py-3 text-sm font-semibold rounded-lg text-slate-600 hover:bg-slate-50 border-l-4 border-transparent transition bg-teal-50/10">
+                        <i class="fa-solid fa-clipboard-check w-5 text-center text-teal-600"></i>
+                        <span class="font-bold text-teal-900">5. Rúbrica de Coavaluació</span>
+                    </button>
+                    <button onclick="changeSection('trello')" id="btn-trello" class="nav-btn flex items-center gap-3 w-full text-left px-4 py-3 text-sm font-semibold rounded-lg text-slate-600 hover:bg-slate-50 border-l-4 border-transparent transition">
+                        <i class="fa-brands fa-trello w-5 text-center text-amber-600"></i>
+                        <span>6. Guia Pràctica Trello</span>
+                    </button>
+                    <button onclick="changeSection('simulador')" id="btn-simulador" class="nav-btn flex items-center gap-3 w-full text-left px-4 py-3 text-sm font-semibold rounded-lg text-slate-600 hover:bg-slate-50 border-l-4 border-transparent transition bg-indigo-50/20">
+                        <i class="fa-solid fa-chalkboard w-5 text-center text-indigo-600"></i>
+                        <span class="text-indigo-950 font-bold">7. Simulador amb Impediments</span>
+                    </button>
+                </nav>
+            </div>
+        </aside>
+
+        <!-- SECCIONES CONTENEDORAS -->
+        <main class="w-full lg:w-3/4 flex flex-col gap-6" id="content-container">
+
+            <!-- ================= 1. INTRODUCCIÓN Y RETO ================= -->
+            <section id="section-intro" class="section-content space-y-6">
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+                    <div class="flex items-center gap-3 border-b pb-4 mb-6">
+                        <div class="gva-bg-blue text-white p-3 rounded-xl">
+                            <i class="fa-solid fa-compass text-2xl"></i>
+                        </div>
+                        <div>
+                            <h2 class="text-2xl font-bold text-slate-900">Introducció i els Reptes del Projecte Intermodular</h2>
+                            <p class="text-sm text-slate-500 font-medium">L'aprenentatge actiu sota el prisma de la Nova Llei d'FP de la Comunitat Valenciana</p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4 text-slate-600 leading-relaxed text-sm md:text-base">
+                        <p>
+                            La <strong>Llei Orgànica 3/2022, de 31 de març, d'ordenació i integració de la Formació Professional</strong> planteja un canvi radical en el paradigma educatiu. L'objectiu no és un altre que el de trencar la visió de "mòduls-estancs" i empènyer l'alumnat a treballar sobre realitats globals i transversals. Aquí és on resideix la importància capital de la figura del **Projecte Intermodular**.
+                        </p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
+                            <div class="bg-slate-50 p-5 rounded-xl border border-slate-200">
+                                <h4 class="font-bold text-slate-800 flex items-center gap-2 mb-2">
+                                    <i class="fa-solid fa-circle-exclamation text-amber-500"></i> El problema real a l'aula
+                                </h4>
+                                <ul class="space-y-2 text-xs text-slate-600 list-disc list-inside">
+                                    <li><strong>"La Fuga de Control"</strong>: L'alumnat de cicle superior està a l'aula d'informàtica, però el professor no sap a simple vista qui està treballant realment o qui es troba aturat per dubtes tècnics.</li>
+                                    <li><strong>Falta de cohesió interna</strong>: Membres d'un mateix grup que no estan sincronitzats, realitzant tasques redundants o lliurant parts desconnectades l'últim dia de curs.</li>
+                                    <li><strong>Avaluació opaca</strong>: Una memòria escrita final de 120 pàgines que dificulta destriar quina ha estat la contribució exacta de cadascun dels integrants del projecte.</li>
+                                </ul>
+                            </div>
+                            <div class="bg-emerald-50/50 p-5 rounded-xl border border-emerald-100">
+                                <h4 class="font-bold text-emerald-950 flex items-center gap-2 mb-2">
+                                    <i class="fa-solid fa-circle-check text-emerald-600"></i> El canvi metodològic que proposem
+                                </h4>
+                                <ul class="space-y-2 text-xs text-emerald-900 list-disc list-inside">
+                                    <li><strong>Sistemes de control visuals (Kanban)</strong>: "El treball que no es veu, no s'avalua". Visualització de l'estat del projecte en targetes digitals interactives.</li>
+                                    <li><strong>Dividir el projecte en Sprints</strong>: Lliuraments parcials i demostracions setmanals del "producte comercialitzable" en lloc de jugar-s'ho tot al final.</li>
+                                    <li><strong>Atribució individual clara</strong>: Tota tasca té un propietari, dates de venciment precises i indicadors de resolució clars de l'execució.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <p>
+                            En aquest manual, veurem de quina manera podem reconfigurar l'aula del cicle per a transformar-la en una autèntica <strong>"oficina de comerç exterior simulada"</strong>, on la col·laboració estiga estructurada, es reduïsca el desordre de OneNote i l'aprenentatge estiga orientat a competències professionals i digitals reals.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ================= 2. EL CO-DOCENT D'IA (4 EXEMPLES DETALLATS) ================= -->
+            <section id="section-ia" class="section-content hidden space-y-6">
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+                    <div class="flex items-center gap-3 border-b pb-4 mb-6">
+                        <div class="gva-bg-blue text-white p-3 rounded-xl">
+                            <i class="fa-solid fa-robot text-2xl"></i>
+                        </div>
+                        <div>
+                            <h2 class="text-2xl font-bold text-slate-900">L'Assistent d'IA com a Co-Docent i Mentor</h2>
+                            <p class="text-sm text-slate-500 font-medium">Metodologia d'ús de la IA com a consultor extern de comerç exterior de l'alumnat</p>
+                        </div>
+                    </div>
+
+                    <p class="text-slate-600 leading-relaxed text-sm mb-6">
+                        Per a evitar que l'alumnat faça servir la IA per a "copiar i enganxar", proposem ensenyar-los tècniques de <strong>Prompting Professional de Rol</strong>. La IA ha d'actuar com una contrapart exigent, un inspector de duanes o un consultor financer sènior. A continuació, exposem 4 casos d'estudi amb els prompts de l'alumnat i les respostes simulades de l'assistent.
+                    </p>
+
+                    <!-- BLOC DE CASOS D'IA DETALLATS -->
+                    <div class="space-y-6">
+                        
+                        <!-- CAS 1: EL REVISOR DE LIQUIDACIONS I INCOTERMS -->
+                        <div class="bg-slate-50 p-6 rounded-xl border border-slate-200 space-y-4">
+                            <h3 class="font-bold text-slate-900 text-sm md:text-base border-b pb-2 flex items-center gap-2">
+                                <span class="bg-blue-600 text-white text-xs font-bold px-2.5 py-1 rounded-full">Cas 1</span>
+                                Revisor de liquidacions de deute duaner i Incoterms
+                            </h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                <strong>Com ajuda al projecte?</strong> Evita que l'alumnat comence el seu DUA o la seua comptabilitat amb càlculs d'IVA de la importació erronis o amb una interpretació confusa del repartiment de costos de l'Incoterm CIF.
+                            </p>
+                            
+                            <!-- Prompt de l'estudiant -->
+                            <div class="bg-slate-900 text-slate-100 font-mono text-xs p-4 rounded-lg">
+                                <p class="text-amber-400 font-bold mb-1"><i class="fa-solid fa-user-pen"></i> PROMPT PER A L'ALUMNE:</p>
+                                <p class="text-[11px] leading-relaxed">
+                                    "Actua com un auditor sènior d'importacions per a la Unió Europea. Volem importar una partida de calçat de cautxú de la Xina amb Incoterm CIF Port de València. El cost FOB de la factura és de 12.000 €, el transport marítim costa 1.500 € i l'assegurança internacional 200 €. Per a calcular el deute, he agafat el cost de transport interior des del Port de València fins al magatzem d'Elx (250 €) i l'he sumat al Valor en Duana. Està ben calculada la Base de l'Aranzel (TARIC de calçat de cautxú: 16.9%) i la Base de l'IVA?"
+                                </p>
+                            </div>
+
+                            <!-- Resposta de l'IA -->
+                            <div class="bg-sky-50 border-l-4 border-sky-600 p-4 rounded-r-lg text-xs space-y-2">
+                                <p class="font-bold text-sky-950 flex items-center gap-1"><i class="fa-solid fa-robot"></i> RESPOSTA METODOLÒGICA DE LA IA:</p>
+                                <p class="text-sky-900 leading-relaxed">
+                                    "<strong>Atenció, teniu un error conceptual crític en la vostra liquidació!</strong> 
+                                    El transport interior nacional des del punt d'entrada a la UE (Port de València) fins a la destinació final a Elx (250 €) <strong>NO s'ha de sumar mai per a calcular el Valor en Duana</strong>. El Valor en Duana ha de reflectir exclusivament els costos fets fins a la frontera exterior de la UE (CIF València).
+                                </p>
+                                <div class="bg-white/80 p-3 rounded border border-sky-100 font-mono text-[10px] space-y-1">
+                                    <p>• <strong>Valor en Duana correcte (BI Aranzel)</strong>: 12.000 € (FOB) + 1.500 € (Fret) + 200 € (Assegurança) = <strong>13.700,00 €</strong>.</p>
+                                    <p>• <strong>Aranzel (16.9%)</strong>: 13.700 € * 16.9% = <strong>2.315,30 €</strong>.</p>
+                                    <p>• <strong>Base Imposable de l'IVA d'importació</strong>: Valor en Duana (13.700 €) + Aranzel (2.315,30 €) + Transport interior Elx (250 €) = <strong>16.265,30 €</strong>.</p>
+                                    <p>• <strong>Quota de l'IVA (21%)</strong>: 16.265,30 € * 21% = <strong>3.415,71 €</strong>.</p>
+                                </div>
+                                <p class="text-sky-900 leading-relaxed font-semibold mt-1">
+                                    Com podeu veure, el transport nacional d'Elx només es suma per a la Base Imposable de l'IVA d'importació (d'acord amb l'art. 83 de la Llei de l'IVA espanyola), no per a calcular l'aranzel."
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- CAS 2: EL CONSULTOR DE CLASSIFICACIÓ ARANZELÀRIA (TARIC) -->
+                        <div class="bg-slate-50 p-6 rounded-xl border border-slate-200 space-y-4">
+                            <h3 class="font-bold text-slate-900 text-sm md:text-base border-b pb-2 flex items-center gap-2">
+                                <span class="bg-blue-600 text-white text-xs font-bold px-2.5 py-1 rounded-full">Cas 2</span>
+                                Consultor de classificació aranzelària complexa
+                            </h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                <strong>Com ajuda al projecte?</strong> Els cercadors del TARIC oficials sovint són difícils de navegar. La IA ajuda a trobar la Nomenclatura Combinada correcta de forma àgil i a interpretar les barreres fitosanitàries d'origen.
+                            </p>
+                            
+                            <!-- Prompt de l'estudiant -->
+                            <div class="bg-slate-900 text-slate-100 font-mono text-xs p-4 rounded-lg">
+                                <p class="text-amber-400 font-bold mb-1"><i class="fa-solid fa-user-pen"></i> PROMPT PER A L'ALUMNE:</p>
+                                <p class="text-[11px] leading-relaxed">
+                                    "Estem redactant el pla d'exportació d'una empresa d'Onda (Castelló) que exportarà teules ceràmiques per a teulades cap a Austràlia. Utilitza la nomenclatura aranzelària per a indicar-nos quin és el seu codi de 8 o 10 dígits (TARIC) i, sobretot, quines mesures especials (especialment bioseguretat i quarantena australiana pel tema de l'embalatge de fusta) s'haurien de preveure."
+                                </p>
+                            </div>
+
+                            <!-- Resposta de l'IA -->
+                            <div class="bg-sky-50 border-l-4 border-sky-600 p-4 rounded-r-lg text-xs space-y-2">
+                                <p class="font-bold text-sky-950 flex items-center gap-1"><i class="fa-solid fa-robot"></i> RESPOSTA METODOLÒGICA DE LA IA:</p>
+                                <p class="text-sky-900 leading-relaxed">
+                                    "El codi de Nomenclatura Combinada (NC) adequat per a les vostres teules ceràmiques de teulat és el <strong>6905 10 00</strong> (Teules ceràmiques de teulat). 
+                                </p>
+                                <p class="text-sky-900 leading-relaxed">
+                                    <strong>Alerta crítica per a l'exportació a Austràlia (DAFF / Bioseguretat)</strong>: Austràlia té una de les normatives de bioseguretat més estrictes del món. Les teules viatgen sobre palets de fusta. Heu d'exigir i verificar de manera obligatòria:
+                                </p>
+                                <ul class="list-disc list-inside text-sky-950 font-medium pl-2 space-y-1">
+                                    <li>Compliment estricte de la norma **NIMF-15 (ISPM 15)** per a embalatges de fusta (tractament tèrmic i marcat visible).</li>
+                                    <li>Lliurar una **Declaració d'embalatge de fusta lliure d'escorça** (Bark-free wood declaration) signada per l'exportador.</li>
+                                    <li>Presentar el certificat de fumigació amb Bromur de Metil o tractament tèrmic de la fusta per a evitar la retenció del contenidor en la duana de Sydney."</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- CAS 3: RECLAMS I DISCREPÀNCIES DE LOGÍSTICA (CREDIT DOCUMENTARI) -->
+                        <div class="bg-slate-50 p-6 rounded-xl border border-slate-200 space-y-4">
+                            <h3 class="font-bold text-slate-900 text-sm md:text-base border-b pb-2 flex items-center gap-2">
+                                <span class="bg-blue-600 text-white text-xs font-bold px-2.5 py-1 rounded-full">Cas 3</span>
+                                Assessor de Mitjans de Pagament i Discrepàncies documentals (L/C)
+                            </h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                <strong>Com ajuda al projecte?</strong> Guia l'estudiant en operacions on s'utilitza la Carta de Crèdit o Crèdit Documentari com a mitjà de pagament complex, un dels punts més conflictius del mòdul de Mitjans de Pagament Internacional.
+                            </p>
+                            
+                            <!-- Prompt de l'estudiant -->
+                            <div class="bg-slate-900 text-slate-100 font-mono text-xs p-4 rounded-lg">
+                                <p class="text-amber-400 font-bold mb-1"><i class="fa-solid fa-user-pen"></i> PROMPT PER A L'ALUMNE:</p>
+                                <p class="text-[11px] leading-relaxed">
+                                    "El nostre comprador de Nova York ens ha obert una Carta de Crèdit irrevocable confirmada segons la UCP 600. El Crèdit exigeix un 'Clean On Board Bill of Lading'. No obstant això, la naviliera ens ha posat una clàusula en el document de transport marítim que diu 'Pallets damaged and wet due to rain on pier'. El banc ens ha dit que això és una discrepància greu. Està en el seu dret el banc de rebutjar el pagament? Què podem fer ara per a solucionar-ho?"
+                                </p>
+                            </div>
+
+                            <!-- Resposta de l'IA -->
+                            <div class="bg-sky-50 border-l-4 border-sky-600 p-4 rounded-r-lg text-xs space-y-2">
+                                <p class="font-bold text-sky-950 flex items-center gap-1"><i class="fa-solid fa-robot"></i> RESPOSTA METODOLÒGICA DE LA IA:</p>
+                                <p class="text-sky-900 leading-relaxed">
+                                    "<strong>Sí, el banc té tot el dret de rebutjar els documents i paralitzar el pagament.</strong> D'acord amb la publicació UCP 600 de la Cambra de Comerç Internacional (ICC), un 'Clean Bill of Lading' és un document de transport lliure de clàusules de defecte o reserves sobre el mal estat de la mercaderia o del seu embalatge. La clàusula de la naviliera converteix el document de transport en un **'Dirty Bill of Lading'** (o clàusulat), trencant el principi d'estricta conformitat documental del crèdit.
+                                </p>
+                                <p class="text-sky-900 font-semibold">Vies de resolució operativa per al vostre projecte:</p>
+                                <ul class="list-decimal list-inside text-sky-950 font-medium pl-2 space-y-1">
+                                    <li><strong>Esmenar el document (Repackaging i Re-enviament)</strong>: Si la mercaderia encara no ha salpat, canviar els palets danyats, re-inspeccionar la càrrega i exigir a la naviliera un nou B/L net de clàusules.</li>
+                                    <li><strong>Demanar un 'Waiver' (Dispensa) al comprador</strong>: Contactar immediatament amb l'importador als EUA perquè ordene al seu banc emissor acceptar la discrepància ('waiver') i procedir al pagament malgrat el defecte de forma.</li>
+                                    <li><strong>Substitució per carta de garantia (L/I - Letter of Indemnity)</strong>: Encara que és un mètode de risc i desaconsellat pel protocol bancari, algunes empreses ofereixen una carta d'indemnització a la naviliera a canvi de rebre un B/L net, assumint elles tota la responsabilitat per futures reclamacions de danys en destinació."</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- CAS 4: INCOTERMS I TRANSFERÈNCIA DE RISC (DPU VS DDP) -->
+                        <div class="bg-slate-50 p-6 rounded-xl border border-slate-200 space-y-4">
+                            <h3 class="font-bold text-slate-900 text-sm md:text-base border-b pb-2 flex items-center gap-2">
+                                <span class="bg-blue-600 text-white text-xs font-bold px-2.5 py-1 rounded-full">Cas 4</span>
+                                Assessor de Risc i Operativa Logística (DPU vs. DDP)
+                            </h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                <strong>Com ajuda al projecte?</strong> Ajuda l'alumnat a resoldre els conflictes d'assegurances i responsabilitats contractuals quan s'ha de pactar un Incoterm d'entrega en destinació amb deures de descàrrega o despatx d'importació.
+                            </p>
+                            
+                            <!-- Prompt de l'estudiant -->
+                            <div class="bg-slate-900 text-slate-100 font-mono text-xs p-4 rounded-lg">
+                                <p class="text-amber-400 font-bold mb-1"><i class="fa-solid fa-user-pen"></i> PROMPT PER A L'ALUMNE:</p>
+                                <p class="text-[11px] leading-relaxed">
+                                    "Estem decidint l'Incoterm per a l'exportació d'oli d'oliva embotellat de Utiel a un supermercat de Londres. Volem encarregar-nos de col·locar la mercaderia directament en les seues prestatgeries i descarregar el camió, però no volem assumir la responsabilitat del despatx de duana de d'importació ni pagar l'IVA de la importació al Regne Unit post-Brexit. El nostre comprador insisteix en un acord DDP. Quina alternativa de la llista d'Incoterms 2020 s'adapta millor al nostre cas?"
+                                </p>
+                            </div>
+
+                            <!-- Resposta de l'IA -->
+                            <div class="bg-sky-50 border-l-4 border-sky-600 p-4 rounded-r-lg text-xs space-y-2">
+                                <p class="font-bold text-sky-950 flex items-center gap-1"><i class="fa-solid fa-robot"></i> RESPOSTA METODOLÒGICA DE LA IA:</p>
+                                <p class="text-sky-900 leading-relaxed">
+                                    "<strong>Heu de rebutjar categòricament el terme DDP!</strong> Sota l'Incoterm DDP (Delivered Duty Paid), l'exportador espanyol estaria obligat per llei a actuar com a importador de registre al Regne Unit, pagar tots els aranzels i liquidar l'IVA britànic, la qual cosa requereix un registre fiscal (EORI britànic i VAT) a Londres.
+                                </p>
+                                <p class="text-sky-900 font-semibold">L'alternativa perfecta per al vostre cas és l'Incoterm DPU (Delivered at Place Unloaded):</p>
+                                <div class="bg-white/80 p-3 rounded border border-sky-100 space-y-1">
+                                    <p>• <strong>Costos i Risc d'entrega</strong>: Com a venedor, pagueu el transport internacional i assumiu el risc de la descàrrega del camió al magatzem de Londres.</p>
+                                    <p>• <strong>Despatx Duaner</strong>: <strong>L'importador britànic és qui està obligat per defecte a realitzar el despatx d'importació</strong>, gestionar els certificats d'oli d'oliva i pagar els tributs (aranzels i IVA britànic).</p>
+                                    <p>• <strong>Descàrrega fita</strong>: DPU és l'únic Incoterm que exigeix de forma explícita al venedor descarregar la mercaderia del transport d'arribada."</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- ================= 3. ALTERNATIVAS A ONENOTE ================= -->
+            <section id="section-eines" class="section-content hidden space-y-6">
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+                    <div class="flex items-center gap-3 border-b pb-4 mb-6">
+                        <div class="gva-bg-blue text-white p-3 rounded-xl">
+                            <i class="fa-solid fa-layer-group text-2xl"></i>
+                        </div>
+                        <div>
+                            <h2 class="text-2xl font-bold text-slate-900">Alternatives Digitals a Microsoft OneNote</h2>
+                            <p class="text-sm text-slate-500 font-medium">Superant els problemes d'organització d'arxius i unificant el treball de l'aula</p>
+                        </div>
+                    </div>
+
+                    <p class="text-slate-600 leading-relaxed text-sm mb-6">
+                        Microsoft OneNote és una llibreta digital fantàstica per a l'ús individual d'un estudiant, però per al treball cooperatiu en projectes complexos pot esdevenir opaca per al professor. A continuació valorem les tres millors alternatives per a l'aula d'FP:
+                    </p>
+
+                    <!-- Comparativa de herramientas en columnas -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <!-- OPCIÓ A -->
+                        <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-inner flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between border-b pb-3 mb-3">
+                                    <h4 class="font-bold text-slate-900">Notion</h4>
+                                    <span class="bg-emerald-100 text-emerald-800 text-[10px] font-bold px-2 py-0.5 rounded-full">La més potent</span>
+                                </div>
+                                <p class="text-xs text-slate-600 leading-relaxed">
+                                    Notion destaca pel seu sistema de bases de dades connectades. Un grup pot escriure la seua memòria tècnica en una pàgina de Notion mentres a l'interior tenen el seu tauler de tasques (Kanban) vinculat.
+                                </p>
+                                <ul class="text-[11px] text-slate-500 list-disc list-inside mt-4 space-y-1.5">
+                                    <li>Crea workspaces visuals</li>
+                                    <li>Multi-vistes: llista, tauler, calendari</li>
+                                    <li>Planificació visual de documents</li>
+                                </ul>
+                            </div>
+                            <div class="border-t pt-4 mt-4 text-[10px] text-amber-600 font-bold">
+                                <i class="fa-solid fa-triangle-exclamation mr-1"></i> Requereix correu de registre.
+                            </div>
+                        </div>
+
+                        <!-- OPCIÓ B -->
+                        <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-inner flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between border-b pb-3 mb-3">
+                                    <h4 class="font-bold text-slate-900">Teams + Planner</h4>
+                                    <span class="bg-blue-100 text-blue-800 text-[10px] font-bold px-2 py-0.5 rounded-full">Oficial GVA</span>
+                                </div>
+                                <p class="text-xs text-slate-600 leading-relaxed">
+                                    Com que la Generalitat Valenciana facilita el compte de Microsoft 365, utilitzar canals privats de Teams integrats amb el planificador de tasques Planner és l'opció que assegura el compliment estricte de la RGPD.
+                                </p>
+                                <ul class="text-[11px] text-slate-500 list-disc list-inside mt-4 space-y-1.5">
+                                    <li>Integració total amb Sharepoint</li>
+                                    <li>Lliure de registre extern d'alumnat</li>
+                                    <li>Accés directe pel professor</li>
+                                </ul>
+                            </div>
+                            <div class="border-t pt-4 mt-4 text-[10px] text-emerald-600 font-bold">
+                                <i class="fa-solid fa-circle-check mr-1"></i> Ideal per a entorns públicos.
+                            </div>
+                        </div>
+
+                        <!-- OPCIÓ C -->
+                        <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-inner flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between border-b pb-3 mb-3">
+                                    <h4 class="font-bold text-slate-900">Trello</h4>
+                                    <span class="bg-amber-100 text-amber-800 text-[10px] font-bold px-2 py-0.5 rounded-full">La més visual</span>
+                                </div>
+                                <p class="text-xs text-slate-600 leading-relaxed">
+                                    La reina de les ferramentes Kanban. Trello és imbatible pel que fa a l'experiència d'usuari i la corba d'aprenentatge. En menys de 10 minuts, qualsevol alumne sap moure targetes, assignar dates i completar tasques.
+                                </p>
+                                <ul class="text-[11px] text-slate-500 list-disc list-inside mt-4 space-y-1.5">
+                                    <li>Senzillesa d'interfície total</li>
+                                    <li>Ús excel·lent de Checklists</li>
+                                    <li>Fàcil seguiment pel professor</li>
+                                </ul>
+                            </div>
+                            <div class="border-t pt-4 mt-4 text-[10px] text-amber-600 font-bold">
+                                <i class="fa-solid fa-circle-exclamation mr-1"></i> Dedicada exclusivament a tasques.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ================= 4. METODOLOGIA SCRUM I DETALL DELS SPRINTS ================= -->
+            <section id="section-scrum" class="section-content hidden space-y-6">
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+                    <div class="flex items-center gap-3 border-b pb-4 mb-6">
+                        <div class="gva-bg-blue text-white p-3 rounded-xl">
+                            <i class="fa-solid fa-hourglass-half text-2xl"></i>
+                        </div>
+                        <div>
+                            <h2 class="text-2xl font-bold text-slate-900">Metodologia Scrum Adaptada a l'Aula</h2>
+                            <p class="text-sm text-slate-500 font-medium">Marc de treball àgil de 12 setmanes per a garantir l'evolució contínua de l'oficina de comerç exterior simulada</p>
+                        </div>
+                    </div>
+
+                    <p class="text-slate-600 leading-relaxed text-sm">
+                        Dividir el desenvolupament del Projecte en **3 fases o Sprints** tanca l'espai per a la improvisació d'última hora i obliga l'alumnat a treballar de manera iterativa.
+                    </p>
+
+                    <!-- RITUALS DE L'AULA ÀGIL -->
+                    <div class="bg-slate-50 p-6 rounded-xl border border-slate-200 space-y-4 my-6">
+                        <h3 class="font-bold text-slate-900 text-sm md:text-base flex items-center gap-2">
+                            <i class="fa-solid fa-repeat text-amber-500"></i> Els Rituals de l'Aula Àgil
+                        </h3>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
+                            <div class="bg-white p-4 rounded-lg border border-slate-200">
+                                <p class="font-bold text-slate-800 uppercase mb-1"><i class="fa-solid fa-clipboard-list text-blue-600"></i> 1. Sprint Planning (Inici de Cicle)</p>
+                                <p class="text-slate-600 leading-relaxed">S'obre el Backlog general del projecte. L'equip es reuneix, llegeix les necessitats operatives del següent bloc i assigna responsabilitats concretes creant les targetes Trello individuals.</p>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg border border-slate-200">
+                                <p class="font-bold text-slate-800 uppercase mb-1"><i class="fa-solid fa-users text-amber-600"></i> 2. Daily Standup (Rutina Setmanal)</p>
+                                <p class="text-slate-600 leading-relaxed">Els primers 10 minuts de cada classe de projecte. Cada grup es posa en rotllana i els alumnes responen: <em>Què vaig fer? Què faré hui de forma activa a l'aula? Quin impediment m'està bloquejant?</em></p>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg border border-slate-200">
+                                <p class="font-bold text-slate-800 uppercase mb-1"><i class="fa-solid fa-circle-check text-emerald-600"></i> 3. Sprint Review & Retro (Tancament)</p>
+                                <p class="text-slate-600 leading-relaxed">Presentació oral de 5 minuts del bloc o lliurable comercial davant del docent (p. ex., la liquidació duanera realitzada). Es reflecteix el treball validat en la nota d'avaluació.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- DETALL DELS 3 SPRINTS -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs">
+                        
+                        <!-- SPRINT 1 -->
+                        <div class="bg-amber-50/40 border border-amber-200 rounded-xl p-5 space-y-3">
+                            <div class="flex justify-between items-center border-b border-amber-200 pb-2">
+                                <span class="font-extrabold text-amber-800 text-xs uppercase">Sprint 1: Viabilitat</span>
+                                <span class="bg-amber-200 text-amber-950 font-bold px-2 py-0.5 rounded-full">Setmanes 1-4</span>
+                            </div>
+                            <h4 class="font-bold text-slate-900">Classificació i Barreres</h4>
+                            <p class="text-slate-600 leading-relaxed">
+                                L'equip fa la selecció del mercat d'importació/exportació basant-se en dades macroeconòmiques i bases de dades com ICEX o Trademap.
+                            </p>
+                            <div class="bg-white p-3 rounded border border-amber-200 space-y-1 font-medium text-slate-800">
+                                <p class="text-[10px] uppercase text-amber-800 font-extrabold">Lliurables Clau (Definició de Fets):</p>
+                                <ul class="list-disc list-inside text-[11px] text-slate-700 space-y-1">
+                                    <li>Fitxa del producte amb **codi TARIC de 10 dígits** justificat.</li>
+                                    <li>Informe complet d'aranzels actius i barreres no aranzelàries d'origen.</li>
+                                    <li>Certificat d'origen requerit (EUR.1, REX, etc.).</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- SPRINT 2 -->
+                        <div class="bg-blue-50/40 border border-blue-200 rounded-xl p-5 space-y-3">
+                            <div class="flex justify-between items-center border-b border-blue-200 pb-2">
+                                <span class="font-extrabold text-blue-800 text-xs uppercase">Sprint 2: Logística</span>
+                                <span class="bg-blue-200 text-blue-950 font-bold px-2 py-0.5 rounded-full">Setmanes 5-8</span>
+                            </div>
+                            <h4 class="font-bold text-slate-900">Cadena de Transport i Documentació</h4>
+                            <p class="text-slate-600 leading-relaxed">
+                                Planificació operativa. S'estableixen les condicions contractuals internacionals i la ruta de transport de la mercaderia.
+                            </p>
+                            <div class="bg-white p-3 rounded border border-blue-200 space-y-1 font-medium text-slate-800">
+                                <p class="text-[10px] uppercase text-blue-800 font-extrabold">Lliurables Clau (Definició de Fets):</p>
+                                <ul class="list-disc list-inside text-[11px] text-slate-700 space-y-1">
+                                    <li>Elecció i justificació de l'**Incoterm 2020** òptim per al cas.</li>
+                                    <li>Pressupost de transport internacional i esborrany de document de transport (CMR, Bill of Lading o AWB).</li>
+                                    <li>Factura comercial d'exportació i Packing List completes.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- SPRINT 3 -->
+                        <div class="bg-emerald-50/40 border border-emerald-200 rounded-xl p-5 space-y-3">
+                            <div class="flex justify-between items-center border-b border-emerald-200 pb-2">
+                                <span class="font-extrabold text-emerald-800 text-xs uppercase">Sprint 3: Despatx</span>
+                                <span class="bg-emerald-200 text-emerald-950 font-bold px-2 py-0.5 rounded-full">Setmanes 9-12</span>
+                            </div>
+                            <h4 class="font-bold text-slate-900">Gestió Duanera i Liquidació</h4>
+                            <p class="text-slate-600 leading-relaxed">
+                                Resolutiva del despatx de duanes. Emplenament del DUA de d'importació o exportació amb el deure tributari que corresponga.
+                            </p>
+                            <div class="bg-white p-3 rounded border border-emerald-200 space-y-1 font-medium text-slate-800">
+                                <p class="text-[10px] uppercase text-emerald-800 font-extrabold">Lliurables Clau (Definició de Fets):</p>
+                                <ul class="list-disc list-inside text-[11px] text-slate-700 space-y-1">
+                                    <li>**Plecs d'ompliment del DUA** correctament realitzats (Exemplar 1/6).</li>
+                                    <li>Càlcul i liquidació del deute duaner (Aranzels + IVA d'importació).</li>
+                                    <li>Preparació del *Pitch* de presentació de l'operació davant del tribunal docent.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- ================= 5. RÚBRICA DE COAVALUACIÓ I AVALUACIÓ INDIVIDUAL ================= -->
+            <section id="section-avaluacio" class="section-content hidden space-y-6">
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+                    <div class="flex items-center gap-3 border-b pb-4 mb-6">
+                        <div class="gva-bg-blue text-white p-3 rounded-xl">
+                            <i class="fa-solid fa-clipboard-check text-2xl"></i>
+                        </div>
+                        <div>
+                            <h2 class="text-2xl font-bold text-slate-900">Rúbrica de Coavaluació i Treball en Equip</h2>
+                            <p class="text-sm text-slate-500 font-medium">Matriu d'avaluació transparent per a qualificar el rendiment col·laboratiu i la implicació individual dels membres</p>
+                        </div>
+                    </div>
+
+                    <p class="text-slate-600 leading-relaxed text-sm mb-4">
+                        Per a acabar amb la percepció que "en un grup de projecte només treballen uns pocs", proposem la utilització obligatòria d'aquesta rúbrica. Cada integrant del grup de manera anònima ha d'avaluar els seus companys d'equip al final de cada Sprint en els següents indicadors:
+                    </p>
+
+                    <!-- MATRIU DE LA RÚBRICA -->
+                    <div class="overflow-x-auto rounded-xl border border-slate-200 shadow-sm text-xs">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr class="bg-slate-100 text-slate-800 uppercase font-extrabold tracking-wider border-b border-slate-200">
+                                    <th class="p-4 w-1/5">Criteri</th>
+                                    <th class="p-4 bg-red-50 text-red-900 w-1/5">Insuficient (1-4)</th>
+                                    <th class="p-4 bg-amber-50 text-amber-900 w-1/5">Millorable / Aprovat (5-6)</th>
+                                    <th class="p-4 bg-blue-50 text-blue-900 w-1/5">Notable (7-8)</th>
+                                    <th class="p-4 bg-emerald-50 text-emerald-900 w-1/5">Excel·lent (9-10)</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-200 leading-relaxed">
+                                <tr>
+                                    <td class="p-4 font-bold bg-slate-50">Contribució i Rigor de la Tasca</td>
+                                    <td class="p-4 text-slate-500">No ha aportat pràcticament treball al grup, deixant tasques d'Incoterms o TARIC sense fer o amb greus errors de càlcul que han hagut de ser refets pels companys.</td>
+                                    <td class="p-4 text-slate-600">Ha aportat treball bàsic però limitant-se a fer el mínim requerit. La qualitat de les anàlisis i de la documentació requereix revisions freqüents.</td>
+                                    <td class="p-4 text-slate-600">S'ha encarregat correctament del seu bloc documental asignat (p. ex., la liquidació del DUA) lliurant una tasca consistent i neta en el temps previst.</td>
+                                    <td class="p-4 text-slate-700 font-semibold">Ha liderat activament el desenvolupament de les tasques més complexes amb màxim rigor tècnic. El seu treball és un exemple professional.</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-4 font-bold bg-slate-50">Compromís Àgil i Kanban (Trello)</td>
+                                    <td class="p-4 text-slate-500">Ignora el tauler de Trello. No mou les targetes i treballa de forma invisible o desorganitzada desvirtuant el mètode visual.</td>
+                                    <td class="p-4 text-slate-600">Participa del Trello només quan se li demana expressament, actualitzant tard les dades de les seues tasques o lliurant sense utilitzar els Checklists de resolució.</td>
+                                    <td class="p-4 text-slate-600">Manté les seues targetes de Trello actualitzades setmanalment, respecta la regla d'una sola targeta activa i segueix l'estructura del grup.</td>
+                                    <td class="p-4 text-slate-700 font-semibold">Gestió impecable del tauler Kanban. Ha ajudat a resoldre els impediments dels companys i ha auditat de manera activa les targetes de "Revisió".</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-4 font-bold bg-slate-50">Iniciativa i Resolució d'Impediments</td>
+                                    <td class="p-4 text-slate-500">Mostra una actitud passiva. Quan té un dubte es deté i no fa preguntes, frenant l'avanç logístic general de tot el grup d'importació.</td>
+                                    <td class="p-4 text-slate-600">Assumeix una actitud de resolució reactiva. Només s'activa davant la pressió de lliurament de l'Sprint o quan el docent l'exigeix directament.</td>
+                                    <td class="p-4 text-slate-600">Afronta els canvis i problemes duaners o d'origen de la mercaderia amb bona voluntat, demanant consells al professorat de forma estructurada.</td>
+                                    <td class="p-4 text-slate-700 font-semibold">Excepcional proactivitat. Investiga solucions complexes a la web d'Aduanas, proposa alternatives a la duana i és el motor de canvi del seu grup.</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-4 font-bold bg-slate-50">Comunicació i Cohesió Interna</td>
+                                    <td class="p-4 text-slate-500">Incompleix compromisos. Es desentén dels debats del grup, no assisteix a les trobades setmanals de coordinació o crea mal ambient de treball.</td>
+                                    <td class="p-4 text-slate-600">Es comunica de forma puntual i acceptable, encara que té tendència a anar a la seua i s'involucra poc en les decisions globals dels companys d'equip.</td>
+                                    <td class="p-4 text-slate-600">S'integra i ajuda de manera permanent en la presa de decisions logístiques col·lectives, escoltant l'opinió dels altres amb respecte professional.</td>
+                                    <td class="p-4 text-slate-700 font-semibold">Excl·lent comunicador i mediador. Facilita que tot l'equip estiga informat, anima els companys bloquejats i manté alta la motivació del grup.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ================= 6. GUIA TRELLO (DETALLADA I AMPLIADA) ================= -->
+            <section id="section-trello" class="section-content hidden space-y-6">
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+                    <div class="flex items-center gap-3 border-b pb-4 mb-6">
+                        <div class="gva-bg-orange text-white p-3 rounded-xl">
+                            <i class="fa-brands fa-trello text-2xl"></i>
+                        </div>
+                        <div>
+                            <h2 class="text-2xl font-bold text-slate-900">Guia Pràctica d'Ús de Trello a l'Aula</h2>
+                            <p class="text-sm text-slate-500 font-medium">Com configurar el tauler, les targetes de Comerç Internacional i les rutines de supervisió docent</p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-6 text-sm text-slate-600 leading-relaxed">
+                        
+                        <!-- Configuración de Columnas -->
+                        <div>
+                            <h3 class="font-bold text-slate-900 border-l-4 border-amber-500 pl-3 mb-2">1. L'Estructura de Columnes Fonamentals</h3>
+                            <p class="text-xs mb-3">
+                                En iniciar el projecte, cada equip ha de crear un únic tauler de Trello en el qual el professor de Comerç Internacional estiga convidat com a **Administrador**. El tauler s'estructurarà estrictament en les següents 4 columnes d'esquerra a dreta:
+                            </p>
+                            <div class="grid grid-cols-1 md:grid-cols-4 gap-4 text-center text-xs font-bold my-4">
+                                <div class="bg-red-50 text-red-900 p-3 rounded-lg border border-red-200">
+                                    <p>1. PER FER (Backlog)</p>
+                                    <p class="text-[10px] font-normal text-red-700 mt-1">Tasques assignades pel grup per al present Sprint.</p>
+                                </div>
+                                <div class="bg-amber-50 text-amber-900 p-3 rounded-lg border border-amber-200">
+                                    <p>2. EN PROCÉS</p>
+                                    <p class="text-[10px] font-normal text-amber-700 mt-1">L'alumne té la targeta i l'està treballant en eixe moment.</p>
+                                </div>
+                                <div class="bg-blue-50 text-blue-900 p-3 rounded-lg border border-blue-200">
+                                    <p>3. REVISIÓ DOCENT</p>
+                                    <p class="text-[10px] font-normal text-blue-700 mt-1">La tasca està feta, a l'espera que el professor l'audite a l'aula.</p>
+                                </div>
+                                <div class="bg-emerald-50 text-emerald-900 p-3 rounded-lg border border-emerald-200">
+                                    <p>4. COMPLETAT</p>
+                                    <p class="text-[10px] font-normal text-emerald-700 mt-1">Tasca aprovada pel professor. S'acumula de cara a la nota.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Estructura de las Tarjetas -->
+                        <div>
+                            <h3 class="font-bold text-slate-900 border-l-4 border-amber-500 pl-3 mb-2">2. L'Anatomia Professional d'una Targeta Trello</h3>
+                            <p class="text-xs mb-3">
+                                Per a evitar targetes "buides" (ex: "Fer el DUA"), establirem una plantilla obligatòria de targeta. Cada targeta de Trello ha de contenir de forma obligada:
+                            </p>
+                            <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 text-xs space-y-3 font-mono">
+                                <p class="font-bold text-slate-800 border-b pb-1.5 text-sm uppercase"><i class="fa-solid fa-ticket text-amber-600 mr-1"></i> Títol: [U4] - Confecció i Tramitació del DUA d'Importació</p>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div>
+                                        <p class="font-bold text-blue-900"><i class="fa-solid fa-user mr-1"></i> Membre Assignat:</p>
+                                        <p class="text-slate-600 mt-0.5">Carlos Barberà (Alumne 1)</p>
+                                        <p class="font-bold text-blue-900 mt-2"><i class="fa-solid fa-calendar mr-1"></i> Data límit:</p>
+                                        <p class="text-slate-600 mt-0.5">18 d'octubre de 2026</p>
+                                    </div>
+                                    <div>
+                                        <p class="font-bold text-blue-900"><i class="fa-solid fa-tag mr-1"></i> Etiqueta:</p>
+                                        <span class="inline-block mt-0.5 bg-purple-100 text-purple-800 font-bold px-2 py-0.5 rounded text-[10px]">Gestió Administrativa</span>
+                                    </div>
+                                </div>
+                                <div class="mt-2">
+                                    <p class="font-bold text-slate-800 border-b pb-1 mb-1.5"><i class="fa-solid fa-square-check text-emerald-600 mr-1"></i> Checklist de resolució obligatòria:</p>
+                                    <ul class="space-y-1 text-slate-600">
+                                        <li>[ ] Localitzar i justificar el codi TARIC de 10 dígits de la mercaderia.</li>
+                                        <li>[ ] Emplenar digitalment el Plec 6 (destinat a la duana d'importació de la UE).</li>
+                                        <li>[ ] Adjuntar la factura comercial redactada de forma correcta.</li>
+                                        <li>[ ] Realitzar el càlcul corresponent del deute duaner (Aranzel + IVA de la importació).</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- DINÀMICA DE SEGUIMENT DEL PROFESSORAT -->
+                        <div>
+                            <h3 class="font-bold text-slate-900 border-l-4 border-amber-500 pl-3 mb-2">3. Com auditar setmanalment el tauler a l'aula d'informàtica</h3>
+                            <p class="text-xs mb-3">
+                                Com a docents, l'èxit del mètode Kanban depèn d'establir una rutina d'inspecció rigorosa durant les hores de projecte:
+                            </p>
+                            <ul class="list-disc list-inside space-y-2 text-xs pl-2">
+                                <li><strong>Auditoria en directe de la columna 'Revisió'</strong>: Quan facis la ronda per l'aula, demana als equips que obrin la seua columna de *"Revisió Docent"*. En lloc de mirar el document sencer, audita exclusivament els Checklists de resolució de la targeta de l'estudiant responsable.</li>
+                                <li><strong>Aplicació del veto de desplaçament</strong>: Si l'alumne no té l'esborrany de la factura original adjuntat o el seu càlcul té un error greu, rebutja la targeta movent-la de nou a *"En Procés"*. No es pot donar per vàlida cap tasca que no estiga validada al 100%.</li>
+                                <li><strong>Inspecció d'Impediments de colors</strong>: Si un alumne té la targeta marcada amb etiqueta vermella d'impediment, és el moment de fer una aturada ràpida a la seua taula per a ajudar-lo a fer la consulta duanera específica o resoldre la incidència administrativa.</li>
+                            </ul>
+                        </div>
+
+                        <!-- Automatizaciones y Power-Ups recomendados -->
+                        <div>
+                            <h3 class="font-bold text-slate-900 border-l-4 border-amber-500 pl-3 mb-2">4. Automatitzacions "Butler" i Power-Ups per a l'Estudiant</h3>
+                            <p class="text-xs">
+                                Per a dinamitzar l'ús de Trello, aconsellarem a l'alumnat configurar les següents regles automàtiques integrades (Butler):
+                            </p>
+                            <ul class="list-disc list-inside space-y-2 text-xs mt-2 pl-2">
+                                <li><strong>Canvi de membre en revisió:</strong> "Quan una targeta es mogui a la columna 'Revisió Docent', es canviarà el membre assignat de l'estudiant pel professor de Comerç Internacional". Això fa que el docent reba un correu electrònic per a revisar la targeta en directe.</li>
+                                <li><strong>Power-Up Calendari:</strong> Permet visualitzar totes les tasques d'Incoterms, Logística o Fiscalitat sota una graella de dates, garantint que cap lliurament es pise en el temps.</li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- ================= 7. SIMULADOR DE TAULER KANBAN AMB BLOCAJES ================= -->
+            <section id="section-simulador" class="section-content hidden space-y-6">
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+                    <div class="flex items-center gap-3 border-b pb-4 mb-6">
+                        <div class="gva-bg-blue text-white p-3 rounded-xl">
+                            <i class="fa-solid fa-chalkboard text-2xl"></i>
+                        </div>
+                        <div>
+                            <h2 class="text-2xl font-bold text-slate-900">Simulador de Tauler Kanban d'Alta Operativa</h2>
+                            <p class="text-sm text-slate-500 font-medium">Simula el tauler Trello amb situacions de bloqueig reals per impediments a l'oficina de comerç exterior</p>
+                        </div>
+                    </div>
+
+                    <p class="text-slate-600 leading-relaxed text-sm mb-6">
+                        En aquesta versió millorada, la targeta de <strong>"Logística de Contenidors" està en estat Bloquejat (Impediment)</strong>. Fins que no resolgues el bloqueig, no es podrà moure de columna! Fes clic al botó roig d'impediment per a solucionar la incidència i continuar el flux de treball.
+                    </p>
+
+                    <!-- CONTENEDOR DEL TABLERO KANBAN -->
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-4" id="kanban-board">
+                        
+                        <!-- COLUMNA 1: PER FER -->
+                        <div class="bg-slate-100 rounded-xl p-3 border border-slate-200 flex flex-col gap-3 min-h-[350px]">
+                            <div class="flex items-center justify-between border-b border-slate-300 pb-2">
+                                <span class="font-bold text-xs text-red-900 uppercase tracking-wider"><i class="fa-solid fa-list-check mr-1.5 text-red-600"></i> 1. Per Fer</span>
+                                <span class="bg-red-200 text-red-900 text-[10px] font-extrabold px-2 py-0.5 rounded-full" id="count-perfer">2</span>
+                            </div>
+                            
+                            <!-- TARJETA A -->
+                            <div class="bg-white p-3.5 rounded-lg shadow-sm border border-slate-200 space-y-2.5 hover:shadow-md transition" id="card-taric">
+                                <div class="flex justify-between items-center">
+                                    <span class="bg-purple-100 text-purple-800 text-[9px] font-bold px-2 py-0.5 rounded">U2 - Barreres</span>
+                                    <span class="text-[9px] text-slate-400 font-bold"><i class="fa-solid fa-clock mr-1"></i> 2 dies</span>
+                                </div>
+                                <h4 class="font-bold text-xs text-slate-900 leading-snug">Classificació TARIC Producte</h4>
+                                <p class="text-[10px] text-slate-500 leading-normal">Trobar el codi a 10 dígits de la mercaderia d'exportació de la Cooperativa.</p>
+                                <div class="flex items-center justify-between border-t border-slate-100 pt-2.5">
+                                    <div class="flex items-center gap-1">
+                                        <div class="w-5 h-5 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-[8px]" title="Alumne 1 (Carlos)">C</div>
+                                        <span class="text-[9px] font-semibold text-slate-500">Carlos B.</span>
+                                    </div>
+                                    <button onclick="moveCard('card-taric', 'procés')" class="bg-slate-950 hover:bg-slate-800 text-white font-bold text-[9px] px-2.5 py-1 rounded shadow-sm flex items-center gap-1 transition">
+                                        <span>Següent</span> <i class="fa-solid fa-arrow-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- TARJETA B -->
+                            <div class="bg-white p-3.5 rounded-lg shadow-sm border border-slate-200 space-y-2.5 hover:shadow-md transition" id="card-incoterm">
+                                <div class="flex justify-between items-center">
+                                    <span class="bg-blue-100 text-blue-800 text-[9px] font-bold px-2 py-0.5 rounded">U3 - Operativa</span>
+                                    <span class="text-[9px] text-slate-400 font-bold"><i class="fa-solid fa-clock mr-1"></i> 5 dies</span>
+                                </div>
+                                <h4 class="font-bold text-xs text-slate-900 leading-snug">Estudi d'Incoterms Alternatius</h4>
+                                <p class="text-[10px] text-slate-500 leading-normal">Definir l'obligatorietat del cost del flet i l'assegurança segons CIF vs FOB.</p>
+                                <div class="flex items-center justify-between border-t border-slate-100 pt-2.5">
+                                    <div class="flex items-center gap-1">
+                                        <div class="w-5 h-5 rounded-full bg-orange-500 text-white flex items-center justify-center font-bold text-[8px]" title="Alumne 2 (Maria)">M</div>
+                                        <span class="text-[9px] font-semibold text-slate-500">Maria S.</span>
+                                    </div>
+                                    <button onclick="moveCard('card-incoterm', 'procés')" class="bg-slate-950 hover:bg-slate-800 text-white font-bold text-[9px] px-2.5 py-1 rounded shadow-sm flex items-center gap-1 transition">
+                                        <span>Següent</span> <i class="fa-solid fa-arrow-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- COLUMNA 2: EN PROCÉS -->
+                        <div class="bg-slate-100 rounded-xl p-3 border border-slate-200 flex flex-col gap-3 min-h-[350px]">
+                            <div class="flex items-center justify-between border-b border-slate-300 pb-2">
+                                <span class="font-bold text-xs text-amber-950 uppercase tracking-wider"><i class="fa-solid fa-spinner mr-1.5 text-amber-600 animate-spin"></i> 2. En Procés</span>
+                                <span class="bg-amber-200 text-amber-950 text-[10px] font-extrabold px-2 py-0.5 rounded-full" id="count-enproces">2</span>
+                            </div>
+                            
+                            <!-- TARJETA C -->
+                            <div class="bg-white p-3.5 rounded-lg shadow-sm border border-slate-200 space-y-2.5 hover:shadow-md transition" id="card-factura">
+                                <div class="flex justify-between items-center">
+                                    <span class="bg-blue-100 text-blue-800 text-[9px] font-bold px-2 py-0.5 rounded">U3 - Fiscal</span>
+                                    <span class="text-[9px] text-amber-600 font-bold"><i class="fa-solid fa-warning mr-1"></i> Activa</span>
+                                </div>
+                                <h4 class="font-bold text-xs text-slate-900 leading-snug">Factura Proforma Exportació</h4>
+                                <p class="text-[10px] text-slate-500 leading-normal">Redactar el document amb el desglossament d'IVA de lliurament intracomunitari.</p>
+                                <div class="flex items-center justify-between border-t border-slate-100 pt-2.5">
+                                    <button onclick="moveCard('card-factura', 'perfer')" class="text-slate-400 hover:text-slate-700 text-[10px] flex items-center gap-0.5 transition">
+                                        <i class="fa-solid fa-arrow-left"></i> <span>Arrere</span>
+                                    </button>
+                                    <button onclick="moveCard('card-factura', 'revisio')" class="bg-slate-950 hover:bg-slate-800 text-white font-bold text-[9px] px-2.5 py-1 rounded shadow-sm flex items-center gap-1 transition">
+                                        <span>Revisar</span> <i class="fa-solid fa-arrow-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- TARJETA E (NUEVA - BLOQUEADA CON IMPEDIMENTOS) -->
+                            <div class="bg-red-50/80 p-3.5 rounded-lg shadow-sm border-2 border-red-300 space-y-2.5 hover:shadow-md transition" id="card-bloqueada" data-blocked="true">
+                                <div class="flex justify-between items-center">
+                                    <span class="bg-red-200 text-red-900 text-[9px] font-extrabold px-2 py-0.5 rounded flex items-center gap-1"><i class="fa-solid fa-triangle-exclamation animate-pulse"></i> Bloqueig de Duana</span>
+                                    <span class="text-[9px] text-red-700 font-bold" id="block-label">Impediment</span>
+                                </div>
+                                <h4 class="font-bold text-xs text-slate-900 leading-snug">Logística de Contenidor - Bill of Lading</h4>
+                                <p class="text-[10px] text-slate-600 leading-normal" id="block-desc">El vaixell requereix el segell telemàtic i validació de la transitària. La targeta està paralitzada a l'aula.</p>
+                                <div class="flex items-center justify-between border-t border-red-200 pt-2.5" id="block-actions">
+                                    <button onclick="resoldreImpediment()" class="bg-red-600 hover:bg-red-700 text-white font-extrabold text-[9px] px-3 py-1 rounded shadow flex items-center gap-1 transition w-full justify-center">
+                                        <i class="fa-solid fa-wrench"></i> Resoldre Impediment d'Aula
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- COLUMNA 3: REVISIÓ DOCENT -->
+                        <div class="bg-slate-100 rounded-xl p-3 border border-slate-200 flex flex-col gap-3 min-h-[350px]">
+                            <div class="flex items-center justify-between border-b border-slate-300 pb-2">
+                                <span class="font-bold text-xs text-blue-900 uppercase tracking-wider"><i class="fa-solid fa-eye mr-1.5 text-blue-600"></i> 3. Revisió Docent</span>
+                                <span class="bg-blue-200 text-blue-900 text-[10px] font-extrabold px-2 py-0.5 rounded-full" id="count-revisio">1</span>
+                            </div>
+                            
+                            <!-- TARJETA D -->
+                            <div class="bg-white p-3.5 rounded-lg shadow-sm border border-slate-200 space-y-2.5 hover:shadow-md transition" id="card-dua">
+                                <div class="flex justify-between items-center">
+                                    <span class="bg-emerald-100 text-emerald-800 text-[9px] font-bold px-2 py-0.5 rounded">U4 - Duanes</span>
+                                    <span class="text-[9px] text-blue-600 font-extrabold flex items-center gap-1"><i class="fa-solid fa-user-tie"></i> Pendent</span>
+                                </div>
+                                <h4 class="font-bold text-xs text-slate-900 leading-snug">Emplenament del DUA (Plec 6)</h4>
+                                <p class="text-[10px] text-slate-500 leading-normal">DUA d'importació del cargament de Taiwan. S'ha d'avaluar si inclou deute fiscal correctament.</p>
+                                <div class="flex items-center justify-between border-t border-slate-100 pt-2.5">
+                                    <button onclick="moveCard('card-dua', 'procés')" class="text-red-600 hover:text-red-800 text-[10px] font-bold flex items-center gap-0.5 transition">
+                                        <i class="fa-solid fa-xmark"></i> <span>Rebutjar</span>
+                                    </button>
+                                    <button onclick="moveCard('card-dua', 'completat')" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[9px] px-2.5 py-1 rounded shadow-sm flex items-center gap-1 transition">
+                                        <span>Aprovar <i class="fa-solid fa-check"></i></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- COLUMNA 4: COMPLETAT -->
+                        <div class="bg-slate-100 rounded-xl p-3 border border-slate-200 flex flex-col gap-3 min-h-[350px]">
+                            <div class="flex items-center justify-between border-b border-slate-300 pb-2">
+                                <span class="font-bold text-xs text-emerald-900 uppercase tracking-wider"><i class="fa-solid fa-circle-check mr-1.5 text-emerald-600"></i> 4. Completat</span>
+                                <span class="bg-emerald-200 text-emerald-900 text-[10px] font-extrabold px-2 py-0.5 rounded-full" id="count-completat">0</span>
+                            </div>
+                            
+                            <!-- Contenedor vacío por defecto para que arrastren aquí -->
+                            <div id="completat-container" class="flex flex-col gap-3"></div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- NOTIFICACIÓN ABSOLUTA / MESSAGE BOX (EVITANDO ALERT()) -->
+    <div id="info-modal" class="hidden fixed inset-0 bg-slate-950/60 flex items-center justify-center z-[100] px-4">
+        <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-2xl max-w-sm w-full space-y-4">
+            <div class="flex items-center gap-3 text-emerald-600 text-lg font-bold border-b pb-2">
+                <i class="fa-solid fa-circle-check"></i>
+                <h4 id="modal-title">Operació Èxit</h4>
+            </div>
+            <p id="modal-desc" class="text-xs text-slate-600 leading-relaxed"></p>
+            <div class="text-right">
+                <button onclick="closeModal()" class="bg-slate-950 hover:bg-slate-800 text-white font-bold py-2 px-5 rounded text-xs transition">
+                    Entès
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- PIE DE PAGINA -->
+    <footer class="bg-slate-900 text-slate-400 py-8 border-t border-slate-800 text-xs text-center mt-auto">
+        <div class="container mx-auto px-4 space-y-3">
+            <p class="font-bold text-slate-200">Plataforma Educativa d'Orientació Metodològica i Seguiment Àgil</p>
+            <p>Creat per al Departament de Comerç i Màrqueting d'un Institut Públic de la Comunitat Valenciana • Curs Acadèmic 2025-2026</p>
+            <div class="flex justify-center space-x-4 text-slate-500">
+                <a href="#" class="hover:text-amber-500 transition">Guia LOMLOE</a>
+                <span>•</span>
+                <a href="#" class="hover:text-amber-500 transition">Models de Projecte</a>
+                <span>•</span>
+                <a href="#" class="hover:text-amber-500 transition">Departament GVA</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- LÓGICA JAVASCRIPT DE NAVEGACIÓN Y SIMULACIÓN KANBAN -->
+    <script>
+        // Función de control para cambiar de sección en el manual (Tabs laterales)
+        function changeSection(sectionId) {
+            // Ocultar todas las secciones
+            document.querySelectorAll('.section-content').forEach(section => {
+                section.classList.add('hidden');
+            });
+            // Mostrar sección activa
+            document.getElementById('section-' + sectionId).classList.remove('hidden');
+
+            // Resetear estilos de todos los botones
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('bg-blue-50', 'text-blue-900', 'border-blue-600', 'active');
+                btn.classList.add('text-slate-600', 'border-transparent');
+            });
+
+            // Dar estilos activos al botón seleccionado
+            const activeBtn = document.getElementById('btn-' + sectionId);
+            activeBtn.classList.remove('text-slate-600', 'border-transparent');
+            activeBtn.classList.add('bg-blue-50', 'text-blue-900', 'border-blue-600', 'active');
+        }
+
+        // Lògica per a resoldre els impediments de Trello (Opció 3)
+        function resoldreImpediment() {
+            const card = document.getElementById('card-bloqueada');
+            if (!card) return;
+
+            // Treure estat de bloqueig
+            card.removeAttribute('data-blocked');
+            card.className = "bg-white p-3.5 rounded-lg shadow-sm border border-slate-200 space-y-2.5 hover:shadow-md transition";
+            
+            // Canviar la capçalera de la targeta de roja a normal
+            const badge = card.querySelector('.bg-red-200');
+            badge.className = "bg-blue-100 text-blue-800 text-[9px] font-bold px-2 py-0.5 rounded";
+            badge.innerHTML = "U3 - Logística";
+
+            document.getElementById('block-label').className = "text-[9px] text-slate-400 font-bold";
+            document.getElementById('block-label').innerHTML = `<i class="fa-solid fa-clock mr-1"></i> Desbloquejat`;
+            
+            document.getElementById('block-desc').className = "text-[10px] text-slate-500 leading-normal";
+            document.getElementById('block-desc').innerText = "Impediment resolt. El document del Bill of Lading ha sigut auditat i signat digitalment per la transitòria.";
+
+            // Substituir el botó de bloqueig pels controls de moviment estàndard
+            document.getElementById('block-actions').innerHTML = `
+                <button onclick="moveCard('card-bloqueada', 'perfer')" class="text-slate-400 hover:text-slate-700 text-[10px] flex items-center gap-0.5 transition">
+                    <i class="fa-solid fa-arrow-left"></i> <span>Arrere</span>
+                </button>
+                <button onclick="moveCard('card-bloqueada', 'revisio')" class="bg-slate-950 hover:bg-slate-800 text-white font-bold text-[9px] px-2.5 py-1 rounded shadow-sm flex items-center gap-1 transition">
+                    <span>Revisar</span> <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            `;
+
+            showModal("Impediment Resolt", "L'alumnat ha resolt la incidència a l'oficina simulada de comerç exterior. Ara la targeta es pot moure!");
+            recalculateCounters();
+        }
+
+        // Lògica interactiva per al simulador de tauler Kanban
+        function moveCard(cardId, destinationColumn) {
+            const cardElement = document.getElementById(cardId);
+            if (!cardElement) return;
+
+            // Verificar si la targeta està bloquejada abans de moure-la
+            if (cardElement.getAttribute('data-blocked') === 'true') {
+                showModal("Targeta Bloquejada!", "Aquesta targeta té un impediment d'aula crític. Heu de resoldre l'incident (fent clic al botó roig d'impediment) abans de poder desplaçar-la a una altra columna.");
+                return;
+            }
+
+            // Seleccionar contingut de la targeta i eliminar controls antics de botons
+            const buttonsContainer = cardElement.querySelector('.flex.items-center.justify-between.border-t');
+            
+            // Re-escriure de forma dinàmica el peu de la targeta en funció de la columna de destí
+            if (destinationColumn === 'perfer') {
+                buttonsContainer.innerHTML = `
+                    <div class="flex items-center gap-1">
+                        <span class="text-[9px] font-semibold text-slate-400">Backlog</span>
+                    </div>
+                    <button onclick="moveCard('${cardId}', 'procés')" class="bg-slate-950 hover:bg-slate-800 text-white font-bold text-[9px] px-2.5 py-1 rounded shadow-sm flex items-center gap-1 transition">
+                        <span>Següent</span> <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                `;
+                // Moure la targeta a la primera columna
+                document.getElementById('count-perfer').parentNode.parentNode.appendChild(cardElement);
+            } 
+            else if (destinationColumn === 'procés') {
+                buttonsContainer.innerHTML = `
+                    <button onclick="moveCard('${cardId}', 'perfer')" class="text-slate-400 hover:text-slate-700 text-[10px] flex items-center gap-0.5 transition">
+                        <i class="fa-solid fa-arrow-left"></i> <span>Arrere</span>
+                    </button>
+                    <button onclick="moveCard('${cardId}', 'revisio')" class="bg-slate-950 hover:bg-slate-800 text-white font-bold text-[9px] px-2.5 py-1 rounded shadow-sm flex items-center gap-1 transition">
+                        <span>Revisar</span> <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                `;
+                // Moure a la columna En procés
+                document.getElementById('count-enproces').parentNode.parentNode.appendChild(cardElement);
+            } 
+            else if (destinationColumn === 'revisio') {
+                buttonsContainer.innerHTML = `
+                    <button onclick="moveCard('${cardId}', 'procés')" class="text-red-600 hover:text-red-800 text-[10px] font-bold flex items-center gap-0.5 transition">
+                        <i class="fa-solid fa-xmark"></i> <span>Rebutjar</span>
+                    </button>
+                    <button onclick="moveCard('${cardId}', 'completat')" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[9px] px-2.5 py-1 rounded shadow-sm flex items-center gap-1 transition">
+                        <span>Aprovar <i class="fa-solid fa-check"></i></span>
+                    </button>
+                `;
+                // Moure a la columna Revisió Docent
+                document.getElementById('count-revisio').parentNode.parentNode.appendChild(cardElement);
+            } 
+            else if (destinationColumn === 'completat') {
+                buttonsContainer.innerHTML = `
+                    <span class="text-[9px] font-extrabold text-emerald-600 flex items-center gap-0.5"><i class="fa-solid fa-circle-check"></i> Validat</span>
+                    <button onclick="moveCard('${cardId}', 'revisio')" class="text-slate-400 hover:text-slate-700 text-[10px] flex items-center gap-0.5 transition">
+                        <i class="fa-solid fa-rotate-left"></i> <span>Re-obrir</span>
+                    </button>
+                `;
+                // Moure a la darrera columna
+                document.getElementById('completat-container').appendChild(cardElement);
+            }
+
+            // Actualitzar de forma dinàmica els comptadors de targetes de cada columna
+            recalculateCounters();
+        }
+
+        // Funció per a re-calcular de forma ràpida els comptadors de tasques en cada columna
+        function recalculateCounters() {
+            // Re-comptar targetes a la columna 1 (Per Fer)
+            const countPerFer = document.getElementById('count-perfer');
+            const itemsPerFer = countPerFer.parentNode.parentNode.querySelectorAll('#card-taric, #card-incoterm, #card-factura, #card-dua, #card-bloqueada').length;
+            countPerFer.innerText = itemsPerFer;
+
+            // Re-comptar targetes a la columna 2 (En Procés)
+            const countEnProces = document.getElementById('count-enproces');
+            const itemsEnProces = countEnProces.parentNode.parentNode.querySelectorAll('#card-taric, #card-incoterm, #card-factura, #card-dua, #card-bloqueada').length;
+            countEnProces.innerText = itemsEnProces;
+
+            // Re-comptar targetes a la columna 3 (Revisió Docent)
+            const countRevisio = document.getElementById('count-revisio');
+            const itemsRevisio = countRevisio.parentNode.parentNode.querySelectorAll('#card-taric, #card-incoterm, #card-factura, #card-dua, #card-bloqueada').length;
+            countRevisio.innerText = itemsRevisio;
+
+            // Re-comptar targetes a la columna 4 (Completat)
+            const countCompletat = document.getElementById('count-completat');
+            const itemsCompletat = document.getElementById('completat-container').querySelectorAll('#card-taric, #card-incoterm, #card-factura, #card-dua, #card-bloqueada').length;
+            countCompletat.innerText = itemsCompletat;
+        }
+
+        // MODAL BOX REPOSITÒRIA DE L'ANCIÀ ALERT()
+        function showModal(title, text) {
+            document.getElementById('modal-title').innerText = title;
+            document.getElementById('modal-desc').innerText = text;
+            document.getElementById('info-modal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('info-modal').classList.add('hidden');
+        }
+
+        // Executar un primer recàlcul a l'iniciar la pàgina
+        window.onload = function() {
+            recalculateCounters();
+        };
+    </script>
+</body>
+</html>
